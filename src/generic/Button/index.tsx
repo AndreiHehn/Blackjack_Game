@@ -5,7 +5,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   disabled?: boolean;
   functionButton?: (e: unknown) => void;
-  color: "red" | "blue" | "green";
+  color: "red" | "blue" | "green" | "gray";
   borderRadius?: string;
   margin?: string;
   width?: string;

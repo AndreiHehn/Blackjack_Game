@@ -17,6 +17,8 @@ export const Container = styled.button<Props>`
       ? "#0963CE"
       : color == "green"
       ? "#06BD70"
+      : color == "gray"
+      ? "#71717A"
       : null};
 
   border: none;
@@ -43,6 +45,8 @@ export const Container = styled.button<Props>`
         ? "#022F64"
         : color == "green"
         ? "#037746"
+        : color == "gray"
+        ? "#2f3640"
         : null};
   }
 `;
