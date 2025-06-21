@@ -1,13 +1,18 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Container } from "../styles/ModalSettings";
 import { AppContext } from "../lib/context";
 import { Button } from "../generic/Button";
 
 export function ModalSettings() {
-  const { userName, setUserName, setShowModalSettings } =
+  const { userName, setUserName, setShowModalSettings, setSettingsChanged } =
     useContext(AppContext);
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [inputValue, setInputValue] = useState(userName);
+
+  useEffect(() => {
+    setSettingsChanged(inputValue !== userName);
+  }, [inputValue, userName]);
+
   return (
     <Container>
       <section className="userSettings">
@@ -20,7 +25,7 @@ export function ModalSettings() {
           <input
             type="text"
             className="usernameInput"
-            ref={inputRef}
+            onChange={(e) => setInputValue(e.target.value)}
             defaultValue={userName}
             placeholder="Insert your username"
           />
@@ -31,14 +36,9 @@ export function ModalSettings() {
           color="green"
           borderRadius="6px"
           functionButton={() => {
-            if (inputRef.current) {
-              setUserName(inputRef.current.value);
-              localStorage.setItem(
-                "blackjack_username",
-                inputRef.current.value
-              );
-              setShowModalSettings(false);
-            }
+            setUserName(inputValue);
+            localStorage.setItem("blackjack_username", inputValue);
+            setShowModalSettings(false);
           }}
         >
           Save

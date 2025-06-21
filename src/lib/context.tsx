@@ -17,6 +17,10 @@ interface AppContextProps {
   setUserName: Dispatch<SetStateAction<string>>;
   showModalSettings: boolean;
   setShowModalSettings: Dispatch<SetStateAction<boolean>>;
+  quitSettings: boolean;
+  setQuitSettings: Dispatch<SetStateAction<boolean>>;
+  settingsChanged: boolean;
+  setSettingsChanged: Dispatch<SetStateAction<boolean>>;
 }
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
@@ -24,10 +28,21 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     return localStorage.getItem("blackjack_username") || "Player 001";
   });
   const [showModalSettings, setShowModalSettings] = useState<boolean>(false);
+  const [quitSettings, setQuitSettings] = useState<boolean>(false);
+  const [settingsChanged, setSettingsChanged] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
-      value={{ userName, setUserName, showModalSettings, setShowModalSettings }}
+      value={{
+        userName,
+        setUserName,
+        showModalSettings,
+        setShowModalSettings,
+        quitSettings,
+        setQuitSettings,
+        settingsChanged,
+        setSettingsChanged,
+      }}
     >
       {children}
     </AppContext.Provider>

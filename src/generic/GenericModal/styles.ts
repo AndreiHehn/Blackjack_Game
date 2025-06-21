@@ -18,7 +18,7 @@ export const Container = styled.div<Props>`
   display: flex;
   flex-direction: column;
   border-radius: 6px;
-  z-index: 10;
+  z-index: 2;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   position: absolute;
   transform: translate(-50%, -50%);

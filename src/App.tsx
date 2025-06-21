@@ -6,13 +6,26 @@ import { ModalGeneric } from "./generic/GenericModal";
 import { AppContext } from "./lib/context";
 
 function App() {
-  const { showModalSettings, setShowModalSettings } = useContext(AppContext);
+  const {
+    showModalSettings,
+    setShowModalSettings,
+    setQuitSettings,
+    settingsChanged,
+  } = useContext(AppContext);
+
+  function VerifyModifications() {
+    if (settingsChanged) {
+      setQuitSettings(true);
+    } else {
+      setShowModalSettings(false);
+    }
+  }
   return (
     <>
       <Home />
       {showModalSettings && (
         <ModalGeneric
-          functionCloseModal={() => setShowModalSettings(false)}
+          functionCloseModal={() => VerifyModifications()}
           mobileFullScreen
           top="50%"
           left="50%"

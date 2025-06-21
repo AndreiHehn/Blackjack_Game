@@ -7,10 +7,16 @@ import DiamondsIcon from "../assets/icons/DiamondsIcon.svg?react";
 import { Button } from "../generic/Button/index.tsx";
 import { useContext } from "react";
 import { AppContext } from "../lib/context.tsx";
+import { ModalMessage } from "../generic/ModalMessage/index.tsx";
 
 export function Home() {
-  const { showModalSettings, setShowModalSettings, userName } =
-    useContext(AppContext);
+  const {
+    showModalSettings,
+    setShowModalSettings,
+    userName,
+    quitSettings,
+    setQuitSettings,
+  } = useContext(AppContext);
 
   return (
     <Container>
@@ -61,6 +67,15 @@ export function Home() {
           Settings
         </Button>
       </div>
+      {quitSettings && (
+        <ModalMessage
+          textMessage="Do you want to quit without saving?"
+          textButton1="Cancel"
+          onClick1={() => setQuitSettings(false)}
+          textButton2="Yes"
+          onClick2={() => (setQuitSettings(false), setShowModalSettings(false))}
+        ></ModalMessage>
+      )}
     </Container>
   );
 }
