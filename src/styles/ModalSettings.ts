@@ -52,4 +52,10 @@ export const Container = styled.div`
       }
     }
   }
+
+  .modalFooter {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
 `;

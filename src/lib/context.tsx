@@ -19,7 +19,9 @@ interface AppContextProps {
 }
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
-  const [userName, setUserName] = useState<string>("Player 001");
+  const [userName, setUserName] = useState(() => {
+    return localStorage.getItem("blackjack_username") || "Player 001";
+  });
   const [showModalSettings, setShowModalSettings] = useState<boolean>(false);
 
   return (
