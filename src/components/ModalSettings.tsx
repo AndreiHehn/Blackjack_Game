@@ -4,14 +4,29 @@ import { AppContext } from "../lib/context";
 import { Button } from "../generic/Button";
 
 export function ModalSettings() {
-  const { userName, setUserName, setShowModalSettings, setSettingsChanged } =
-    useContext(AppContext);
+  const {
+    userName,
+    setUserName,
+    setShowModalSettings,
+    setSettingsChanged,
+    setEmptyUserName,
+  } = useContext(AppContext);
 
   const [inputValue, setInputValue] = useState(userName);
 
   useEffect(() => {
     setSettingsChanged(inputValue !== userName);
   }, [inputValue, userName]);
+
+  function VerifyUsername() {
+    if (inputValue != "") {
+      setUserName(inputValue);
+      localStorage.setItem("blackjack_username", inputValue);
+      setShowModalSettings(false);
+    } else {
+      setEmptyUserName(true);
+    }
+  }
 
   return (
     <Container>
@@ -35,11 +50,7 @@ export function ModalSettings() {
         <Button
           color="green"
           borderRadius="6px"
-          functionButton={() => {
-            setUserName(inputValue);
-            localStorage.setItem("blackjack_username", inputValue);
-            setShowModalSettings(false);
-          }}
+          functionButton={VerifyUsername}
         >
           Save
         </Button>

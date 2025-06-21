@@ -6,8 +6,8 @@ interface Props {
   textMessage: string;
   textButton1: string;
   textButton2?: string;
-  onClick1: (e: any) => void;
-  onClick2?: (e: any) => void;
+  onClick1: (e: unknown) => void;
+  onClick2?: (e: unknown) => void;
 }
 export function ModalMessage({
   textMessage,

@@ -16,6 +16,8 @@ export function Home() {
     userName,
     quitSettings,
     setQuitSettings,
+    emptyUserName,
+    setEmptyUserName,
   } = useContext(AppContext);
 
   return (
@@ -74,6 +76,13 @@ export function Home() {
           onClick1={() => setQuitSettings(false)}
           textButton2="Yes"
           onClick2={() => (setQuitSettings(false), setShowModalSettings(false))}
+        ></ModalMessage>
+      )}
+      {emptyUserName && (
+        <ModalMessage
+          textMessage="Your username cannot be empty!"
+          textButton1="OK"
+          onClick1={() => setEmptyUserName(false)}
         ></ModalMessage>
       )}
     </Container>
