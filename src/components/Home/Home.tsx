@@ -4,6 +4,7 @@ import ClubsIcon from "../../assets/icons/ClubsIcon.svg?react";
 import SpadesIcon from "../../assets/icons/SpadesIcon.svg?react";
 import HeartsIcon from "../../assets/icons/HeartsIcon.svg?react";
 import DiamondsIcon from "../../assets/icons/DiamondsIcon.svg?react";
+import { Button } from "../../generic/Button/index.tsx";
 
 export function Home() {
   return (
@@ -22,6 +23,14 @@ export function Home() {
           <SpadesIcon className="suit-icon" />
         </div>
       </header>
+      <Button
+        color="green"
+        borderRadius="6px"
+        margin="20px 0"
+        functionButton={() => console.log("BOTÃO FUNCIONA")}
+      >
+        Start Game
+      </Button>
     </Container>
   );
 }
