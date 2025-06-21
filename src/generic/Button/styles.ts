@@ -31,7 +31,6 @@ export const Container = styled.button<Props>`
   font-size: 14px;
   font-family: "Segoe UI";
   cursor: pointer;
-
   transition: 0.5s;
 
   &:hover {
