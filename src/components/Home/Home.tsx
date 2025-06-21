@@ -6,14 +6,22 @@ import HeartsIcon from "../../assets/icons/HeartsIcon.svg?react";
 import DiamondsIcon from "../../assets/icons/DiamondsIcon.svg?react";
 
 export function Home() {
-  console.log("testeeeee");
   return (
     <Container>
-      <div>teste</div>
-      <ClubsIcon />
-      <SpadesIcon />
-      <HeartsIcon />
-      <DiamondsIcon />
+      <header className="app-header">
+        <div className="left-icons">
+          <ClubsIcon className="suit-icon" />
+          <HeartsIcon className="suit-icon red-suit" />
+        </div>
+        <div className="app-title">
+          <h1>REACT</h1>
+          <h1>BLACKJACK</h1>
+        </div>
+        <div className="right-icons">
+          <DiamondsIcon className="suit-icon red-suit" />
+          <SpadesIcon className="suit-icon" />
+        </div>
+      </header>
     </Container>
   );
 }
