@@ -1,13 +1,12 @@
-import { Container } from "../../styles/Home.ts";
+import { Container } from "../styles/Home.ts";
 
-import ClubsIcon from "../../assets/icons/ClubsIcon.svg?react";
-import SpadesIcon from "../../assets/icons/SpadesIcon.svg?react";
-import HeartsIcon from "../../assets/icons/HeartsIcon.svg?react";
-import DiamondsIcon from "../../assets/icons/DiamondsIcon.svg?react";
-import { Button } from "../../generic/Button/index.tsx";
-import { ModalGeneric } from "../../generic/GenericModal/index.tsx";
+import ClubsIcon from "../assets/icons/ClubsIcon.svg?react";
+import SpadesIcon from "../assets/icons/SpadesIcon.svg?react";
+import HeartsIcon from "../assets/icons/HeartsIcon.svg?react";
+import DiamondsIcon from "../assets/icons/DiamondsIcon.svg?react";
+import { Button } from "../generic/Button/index.tsx";
 import { useContext } from "react";
-import { AppContext } from "../../lib/context.tsx";
+import { AppContext } from "../lib/context.tsx";
 
 export function Home() {
   const { showModalSettings, setShowModalSettings, userName } =
@@ -61,19 +60,6 @@ export function Home() {
         >
           Settings
         </Button>
-
-        {showModalSettings && (
-          <ModalGeneric
-            functionCloseModal={() => setShowModalSettings(false)}
-            mobileFullScreen
-            top="50%"
-            left="50%"
-            title="Configurações"
-            width="400px"
-          >
-            <div>Configurações do jogador</div>
-          </ModalGeneric>
-        )}
       </div>
     </Container>
   );
