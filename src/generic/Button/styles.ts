@@ -4,6 +4,8 @@ interface Props {
   color: string;
   $borderRadius: string;
   $margin: string;
+  $width: string;
+  $height: string;
 }
 
 export const Container = styled.button<Props>`
@@ -20,8 +22,8 @@ export const Container = styled.button<Props>`
   border: none;
   border-radius: ${(props) => props.$borderRadius};
 
-  width: auto;
-  height: auto;
+  width: ${(props) => props.$width};
+  height: ${(props) => props.$height};
 
   padding: 3px 16px;
   margin: ${(props) => props.$margin};

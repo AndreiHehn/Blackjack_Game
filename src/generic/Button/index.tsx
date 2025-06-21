@@ -8,6 +8,8 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   color: "red" | "blue" | "green";
   borderRadius?: string;
   margin?: string;
+  width?: string;
+  height?: string;
 }
 
 export function Button({
@@ -17,6 +19,8 @@ export function Button({
   color,
   borderRadius,
   margin,
+  width,
+  height,
 }: Props) {
   return (
     <Container
@@ -24,6 +28,8 @@ export function Button({
       color={color}
       $borderRadius={borderRadius ?? "0px"}
       $margin={margin ?? "0px"}
+      $width={width ?? "auto"}
+      $height={height ?? "auto"}
       onClick={functionButton}
     >
       {children}

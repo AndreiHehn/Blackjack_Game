@@ -26,10 +26,19 @@ export function Home() {
       <Button
         color="green"
         borderRadius="6px"
-        margin="20px 0"
+        margin="20px 0 10px 0"
+        width="110px"
         functionButton={() => console.log("BOTÃO FUNCIONA")}
       >
         Start Game
+      </Button>
+      <Button
+        color="blue"
+        borderRadius="6px"
+        width="110px"
+        functionButton={() => console.log("BOTÃO FUNCIONA")}
+      >
+        How to Play
       </Button>
     </Container>
   );
