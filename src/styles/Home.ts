@@ -69,6 +69,19 @@ export const Container = styled.main`
     }
   }
 
+  .subHeader {
+    margin-bottom: 50px;
+
+    .subHeaderText {
+      font-weight: 600;
+    }
+
+    .username {
+      font-weight: 700;
+      color: #aa0505;
+    }
+  }
+
   .home-buttons {
     display: flex;
     flex-direction: column;

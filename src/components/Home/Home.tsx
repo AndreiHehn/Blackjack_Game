@@ -10,7 +10,9 @@ import { useContext } from "react";
 import { AppContext } from "../../lib/context.tsx";
 
 export function Home() {
-  const { showModalSettings, setShowModalSettings } = useContext(AppContext);
+  const { showModalSettings, setShowModalSettings, userName } =
+    useContext(AppContext);
+
   return (
     <Container>
       <header className="app-header">
@@ -27,6 +29,11 @@ export function Home() {
           <SpadesIcon className="suit-icon" />
         </div>
       </header>
+      <div className="subHeader">
+        <h2 className="subHeaderText">
+          Welcome, <span className="username">{userName}</span>!
+        </h2>
+      </div>
       <div className="home-buttons">
         <Button
           color="green"
