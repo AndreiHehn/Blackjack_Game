@@ -53,7 +53,7 @@ export const Container = styled.div<Props>`
   }
 
   .modalTitle {
-    font-size: 24px;
+    font-size: 20px;
   }
   .closeButton {
     display: flex;
@@ -63,8 +63,12 @@ export const Container = styled.div<Props>`
     cursor: pointer;
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 `;
