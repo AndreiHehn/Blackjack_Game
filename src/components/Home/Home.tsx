@@ -23,23 +23,32 @@ export function Home() {
           <SpadesIcon className="suit-icon" />
         </div>
       </header>
-      <Button
-        color="green"
-        borderRadius="6px"
-        margin="20px 0 10px 0"
-        width="110px"
-        functionButton={() => console.log("BOTÃO FUNCIONA")}
-      >
-        Start Game
-      </Button>
-      <Button
-        color="blue"
-        borderRadius="6px"
-        width="110px"
-        functionButton={() => console.log("BOTÃO FUNCIONA")}
-      >
-        How to Play
-      </Button>
+      <div className="home-buttons">
+        <Button
+          color="green"
+          borderRadius="6px"
+          width="110px"
+          functionButton={() => console.log("BOTÃO FUNCIONA")}
+        >
+          Start Game
+        </Button>
+        <Button
+          color="blue"
+          borderRadius="6px"
+          width="110px"
+          functionButton={() => console.log("BOTÃO FUNCIONA")}
+        >
+          How to Play
+        </Button>
+        <Button
+          color="red"
+          borderRadius="6px"
+          width="110px"
+          functionButton={() => console.log("BOTÃO FUNCIONA")}
+        >
+          Settings
+        </Button>
+      </div>
     </Container>
   );
 }

@@ -12,8 +12,11 @@ export const Container = styled.main`
     display: flex;
     align-items: center;
     gap: 16px;
+    position: absolute;
+    top: 0;
+    margin-top: 10px;
 
-    @media (max-width: 720px) {
+    @media (max-width: 750px) {
       flex-direction: column;
     }
 
@@ -25,12 +28,16 @@ export const Container = styled.main`
         font-weight: 600;
         font-size: 72px;
 
-        @media (max-width: 1160px) {
-          font-size: 56px;
+        @media (max-width: 1050px) {
+          font-size: 52px;
         }
 
-        @media (max-width: 720px) {
-          font-size: 32px;
+        @media (max-width: 835px) {
+          font-size: 40px;
+        }
+
+        @media (max-width: 450px) {
+          font-size: 24px;
         }
       }
     }
@@ -53,11 +60,6 @@ export const Container = styled.main`
         height: 52px;
         width: 52px;
       }
-
-      @media (max-width: 720px) {
-        height: 24px;
-        width: 24px;
-      }
     }
 
     .red-suit {
@@ -65,5 +67,11 @@ export const Container = styled.main`
         fill: #ff0000;
       }
     }
+  }
+
+  .home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 `;
