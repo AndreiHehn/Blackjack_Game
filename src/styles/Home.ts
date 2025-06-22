@@ -76,10 +76,18 @@ export const Container = styled.main`
     align-items: center;
     gap: 10px;
 
+    @media (max-width: 750px) {
+      margin-top: 100px;
+    }
+
     .userAvatar {
       width: 125px;
       border: 3px solid #aa0505;
       border-radius: 50%;
+
+      @media (max-width: 750px) {
+        width: 75px;
+      }
     }
 
     .subHeaderText {
