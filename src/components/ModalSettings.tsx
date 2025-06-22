@@ -6,6 +6,7 @@ import { AvatarSelection } from "./AvatarSelection";
 import { LanguageSelector } from "./LanguageSelector";
 import i18n from "../lib/language";
 import { useTranslation } from "react-i18next";
+import { RadioButton } from "../generic/RadioButton";
 
 export function ModalSettings() {
   const {
@@ -18,6 +19,8 @@ export function ModalSettings() {
     setSelectedAvatar,
     selectedLanguage,
     setSelectedLanguage,
+    setTheme,
+    theme,
   } = useContext(AppContext);
 
   const [inputValue, setInputValue] = useState(userName);
@@ -98,6 +101,35 @@ export function ModalSettings() {
             selectedLanguage={localLanguage}
             onSelectLanguage={setLocalLanguage}
           />
+        </div>
+        <div className="themeSelector">
+          <h3 className="themeText">{t("Theme")}:</h3>
+          <div className="radioButtons">
+            <RadioButton
+              name="themeRB"
+              text={t("Light Mode")}
+              color="#aa0505"
+              value="light"
+              checked={theme == "light"}
+              onChange={(val) => setTheme(val)}
+            ></RadioButton>
+            <RadioButton
+              name="themeRB"
+              text={t("Dark Mode")}
+              color="#aa0505"
+              value="dark"
+              checked={theme == "dark"}
+              onChange={(val) => setTheme(val)}
+            ></RadioButton>
+            <RadioButton
+              name="themeRB"
+              text={t("System Theme")}
+              color="#aa0505"
+              value="system"
+              checked={theme == "system"}
+              onChange={(val) => setTheme(val)}
+            ></RadioButton>
+          </div>
         </div>
       </section>
       <footer className="modalFooter">

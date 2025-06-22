@@ -79,6 +79,24 @@ export const Container = styled.div`
     }
   }
 
+  .themeSelector {
+    margin-top: 10px;
+    /* display: flex;
+    align-items: center; */
+    gap: 10px;
+    .themeText {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .radioButtons {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
   .modalFooter {
     margin-top: 20px;
     display: flex;

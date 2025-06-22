@@ -27,6 +27,9 @@ interface AppContextProps {
   setSelectedAvatar: Dispatch<SetStateAction<string>>;
   selectedLanguage: string;
   setSelectedLanguage: Dispatch<SetStateAction<string>>;
+
+  theme: string;
+  setTheme: Dispatch<SetStateAction<string>>;
 }
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
@@ -43,6 +46,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [selectedLanguage, setSelectedLanguage] = useState(() => {
     return localStorage.getItem("blackjack_language") || "en";
   });
+
+  const [theme, setTheme] = useState<string>("light");
 
   return (
     <AppContext.Provider
@@ -61,6 +66,9 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setSelectedAvatar,
         selectedLanguage,
         setSelectedLanguage,
+
+        theme,
+        setTheme,
       }}
     >
       {children}
