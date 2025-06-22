@@ -4,8 +4,12 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #f4f4f5;
+.light-theme {
+  --background-color: #fffbd0;
+}
+
+.dark-theme {
+  --background-color: #71717a;
 }
 
 h1,
