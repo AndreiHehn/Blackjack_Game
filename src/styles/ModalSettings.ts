@@ -53,6 +53,18 @@ export const Container = styled.div`
     }
   }
 
+  .avatar {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .avatarText {
+      font-size: 14px;
+      font-weight: 600;
+      align-self: flex-start;
+    }
+  }
+
   .modalFooter {
     margin-top: 20px;
     display: flex;

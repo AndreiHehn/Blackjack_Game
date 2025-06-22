@@ -23,6 +23,8 @@ interface AppContextProps {
   setSettingsChanged: Dispatch<SetStateAction<boolean>>;
   emptyUserName: boolean;
   setEmptyUserName: Dispatch<SetStateAction<boolean>>;
+  selectedAvatar: string;
+  setSelectedAvatar: Dispatch<SetStateAction<string>>;
 }
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
@@ -33,6 +35,9 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [quitSettings, setQuitSettings] = useState<boolean>(false);
   const [settingsChanged, setSettingsChanged] = useState<boolean>(false);
   const [emptyUserName, setEmptyUserName] = useState<boolean>(false);
+  const [selectedAvatar, setSelectedAvatar] = useState<string>(
+    localStorage.getItem("blackjack_avatar") || ""
+  );
 
   return (
     <AppContext.Provider
@@ -47,6 +52,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setSettingsChanged,
         emptyUserName,
         setEmptyUserName,
+        selectedAvatar,
+        setSelectedAvatar,
       }}
     >
       {children}

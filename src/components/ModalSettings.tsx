@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Container } from "../styles/ModalSettings";
 import { AppContext } from "../lib/context";
 import { Button } from "../generic/Button";
+import { AvatarSelection } from "./AvatarSelection";
 
 export function ModalSettings() {
   const {
@@ -10,6 +11,8 @@ export function ModalSettings() {
     setShowModalSettings,
     setSettingsChanged,
     setEmptyUserName,
+    selectedAvatar,
+    setSelectedAvatar,
   } = useContext(AppContext);
 
   const [inputValue, setInputValue] = useState(userName);
@@ -22,6 +25,7 @@ export function ModalSettings() {
     if (inputValue != "") {
       setUserName(inputValue);
       localStorage.setItem("blackjack_username", inputValue);
+      localStorage.setItem("blackjack_avatar", selectedAvatar);
       setShowModalSettings(false);
     } else {
       setEmptyUserName(true);
@@ -34,6 +38,13 @@ export function ModalSettings() {
         <div className="sectionSeparator">
           <h2 className="locationText">User Settings</h2>
           <hr className="sectionLine" />
+        </div>
+        <div className="avatar">
+          <h2 className="avatarText">Select your Avatar:</h2>
+          <AvatarSelection
+            selectedAvatar={selectedAvatar}
+            onSelectAvatar={setSelectedAvatar}
+          />
         </div>
         <div className="username">
           <h3 className="userNameText">User Name:</h3>
