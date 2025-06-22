@@ -18,6 +18,7 @@ export function Home() {
     setQuitSettings,
     emptyUserName,
     setEmptyUserName,
+    selectedAvatar,
   } = useContext(AppContext);
 
   return (
@@ -37,6 +38,7 @@ export function Home() {
         </div>
       </header>
       <div className="subHeader">
+        <img src={selectedAvatar} alt="Avatar" className="userAvatar" />
         <h2 className="subHeaderText">
           Welcome, <span className="username">{userName}</span>!
         </h2>

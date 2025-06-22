@@ -71,6 +71,16 @@ export const Container = styled.main`
 
   .subHeader {
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .userAvatar {
+      width: 125px;
+      border: 3px solid #aa0505;
+      border-radius: 50%;
+    }
 
     .subHeaderText {
       font-weight: 600;
