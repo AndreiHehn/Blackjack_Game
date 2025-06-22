@@ -8,10 +8,10 @@ import { Button } from "../generic/Button/index.tsx";
 import { useContext } from "react";
 import { AppContext } from "../lib/context.tsx";
 import { ModalMessage } from "../generic/ModalMessage/index.tsx";
+import defaultAvatar from "../../src/assets/icons/avatar_suits.png";
 
 export function Home() {
   const {
-    showModalSettings,
     setShowModalSettings,
     userName,
     quitSettings,
@@ -19,7 +19,14 @@ export function Home() {
     emptyUserName,
     setEmptyUserName,
     selectedAvatar,
+    setSelectedAvatar,
   } = useContext(AppContext);
+
+  function SelectDefaultAvatar() {
+    if (!selectedAvatar) {
+      setSelectedAvatar(defaultAvatar);
+    }
+  }
 
   return (
     <Container>
@@ -38,7 +45,11 @@ export function Home() {
         </div>
       </header>
       <div className="subHeader">
-        <img src={selectedAvatar} alt="Avatar" className="userAvatar" />
+        <img
+          src={selectedAvatar ? selectedAvatar : defaultAvatar}
+          alt="Avatar"
+          className="userAvatar"
+        />
         <h2 className="subHeaderText">
           Welcome, <span className="username">{userName}</span>!
         </h2>
@@ -65,7 +76,7 @@ export function Home() {
           borderRadius="6px"
           width="110px"
           functionButton={() => (
-            setShowModalSettings(true), console.log(showModalSettings)
+            setShowModalSettings(true), SelectDefaultAvatar()
           )}
         >
           Settings

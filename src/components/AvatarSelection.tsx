@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Slider from "react-slick";
-import avatar1 from "../../src/assets/icons/avatar_clubs.png";
+import avatar1 from "../../src/assets/icons/avatar_suits.png";
 import avatar2 from "../../src/assets/icons/avatar_diamonds.png";
 import avatar3 from "../../src/assets/icons/avatar_spades.png";
 import avatar4 from "../../src/assets/icons/avatar_hearts.png";
-import avatar5 from "../../src/assets/icons/avatar_clubs.png"; // Repete apenas como exemplo
+import avatar5 from "../../src/assets/icons/avatar_clubs.png";
 
 import ArrowNextIcon from "../../src/assets/icons/ArrowNextIcon.svg?react";
 import ArrowPrevIcon from "../../src/assets/icons/ArrowPrevIcon.svg?react";
