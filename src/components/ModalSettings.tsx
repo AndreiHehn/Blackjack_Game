@@ -16,16 +16,22 @@ export function ModalSettings() {
   } = useContext(AppContext);
 
   const [inputValue, setInputValue] = useState(userName);
+  const [localAvatar, setLocalAvatar] = useState(selectedAvatar);
 
   useEffect(() => {
-    setSettingsChanged(inputValue !== userName);
-  }, [inputValue, userName]);
+    if (inputValue !== userName || selectedAvatar !== localAvatar) {
+      setSettingsChanged(true);
+    } else {
+      setSettingsChanged(false);
+    }
+  }, [inputValue, userName, selectedAvatar, localAvatar]);
 
   function VerifyUsername() {
     if (inputValue != "") {
       setUserName(inputValue);
+      setSelectedAvatar(localAvatar);
       localStorage.setItem("blackjack_username", inputValue);
-      localStorage.setItem("blackjack_avatar", selectedAvatar);
+      localStorage.setItem("blackjack_avatar", localAvatar);
       setShowModalSettings(false);
     } else {
       setEmptyUserName(true);
@@ -42,8 +48,8 @@ export function ModalSettings() {
         <div className="avatar">
           <h2 className="avatarText">Select your Avatar:</h2>
           <AvatarSelection
-            selectedAvatar={selectedAvatar}
-            onSelectAvatar={setSelectedAvatar}
+            selectedAvatar={localAvatar}
+            onSelectAvatar={setLocalAvatar}
           />
         </div>
         <div className="username">
