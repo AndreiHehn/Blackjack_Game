@@ -107,7 +107,7 @@ export function ModalSettings() {
           <div className="radioButtons">
             <RadioButton
               name="themeRB"
-              text={t("Light Mode")}
+              text={t("Light Theme")}
               color="#aa0505"
               bgColor="#fffbd0"
               value="light"
@@ -116,7 +116,7 @@ export function ModalSettings() {
             ></RadioButton>
             <RadioButton
               name="themeRB"
-              text={t("Dark Mode")}
+              text={t("Dark Theme")}
               color="#aa0505"
               bgColor="#fffbd0"
               value="dark"
