@@ -18,6 +18,7 @@ export function ModalSettings() {
   const [inputValue, setInputValue] = useState(userName);
   const [localAvatar, setLocalAvatar] = useState(selectedAvatar);
 
+  // Verifies if one or more settings were changed
   useEffect(() => {
     if (inputValue !== userName || selectedAvatar !== localAvatar) {
       setSettingsChanged(true);
@@ -26,6 +27,7 @@ export function ModalSettings() {
     }
   }, [inputValue, userName, selectedAvatar, localAvatar]);
 
+  // Saves the settings if the username is not empty
   function SaveChanges() {
     if (inputValue != "") {
       setUserName(inputValue);
