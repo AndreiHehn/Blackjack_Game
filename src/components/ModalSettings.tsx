@@ -26,7 +26,7 @@ export function ModalSettings() {
     }
   }, [inputValue, userName, selectedAvatar, localAvatar]);
 
-  function VerifyUsername() {
+  function SaveChanges() {
     if (inputValue != "") {
       setUserName(inputValue);
       setSelectedAvatar(localAvatar);
@@ -64,11 +64,7 @@ export function ModalSettings() {
         </div>
       </section>
       <footer className="modalFooter">
-        <Button
-          color="green"
-          borderRadius="6px"
-          functionButton={VerifyUsername}
-        >
+        <Button color="green" borderRadius="6px" functionButton={SaveChanges}>
           Save
         </Button>
       </footer>
