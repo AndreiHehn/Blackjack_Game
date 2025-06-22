@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface Props {
   radioColor: string;
+  radioBGColor: string;
 }
 
 export const Container = styled.label<Props>`
@@ -15,7 +16,7 @@ export const Container = styled.label<Props>`
 
   input[type="radio"] {
     appearance: none;
-    background-color: #fff;
+    background-color: ${(props) => props.radioBGColor};
     margin: 0;
     width: 18px;
     height: 18px;

@@ -109,6 +109,7 @@ export function ModalSettings() {
               name="themeRB"
               text={t("Light Mode")}
               color="#aa0505"
+              bgColor="#fffbd0"
               value="light"
               checked={theme == "light"}
               onChange={(val) => setTheme(val)}
@@ -117,6 +118,7 @@ export function ModalSettings() {
               name="themeRB"
               text={t("Dark Mode")}
               color="#aa0505"
+              bgColor="#fffbd0"
               value="dark"
               checked={theme == "dark"}
               onChange={(val) => setTheme(val)}
@@ -125,6 +127,7 @@ export function ModalSettings() {
               name="themeRB"
               text={t("System Theme")}
               color="#aa0505"
+              bgColor="#fffbd0"
               value="system"
               checked={theme == "system"}
               onChange={(val) => setTheme(val)}
