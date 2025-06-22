@@ -53,6 +53,7 @@ export const Container = styled.div`
     transform: translateY(-50%);
     cursor: pointer;
     transition: transform 0.2s;
+    z-index: 1;
 
     &:hover {
       transform: translateY(-50%) scale(1.1);
