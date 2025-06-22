@@ -126,6 +126,7 @@ export function LanguageSelector({
         dropdownIndicator: (base) => ({
           ...base,
           padding: "2px",
+          color: "#2f3640",
         }),
         input: (base) => ({
           ...base,
