@@ -5,6 +5,7 @@ import { Button } from "../generic/Button";
 import { AvatarSelection } from "./AvatarSelection";
 import { LanguageSelector } from "./LanguageSelector";
 import i18n from "../lib/language";
+import { useTranslation } from "react-i18next";
 
 export function ModalSettings() {
   const {
@@ -22,6 +23,8 @@ export function ModalSettings() {
   const [inputValue, setInputValue] = useState(userName);
   const [localAvatar, setLocalAvatar] = useState(selectedAvatar);
   const [localLanguage, setLocalLanguage] = useState(selectedLanguage);
+
+  const { t } = useTranslation();
 
   // Verifies if one or more settings were changed --> Avatar / Username / Language
   useEffect(() => {
@@ -63,34 +66,34 @@ export function ModalSettings() {
     <Container>
       <section className="userSettings">
         <div className="sectionSeparator">
-          <h2 className="locationText">User Settings</h2>
+          <h2 className="locationText">{t("User Settings")}</h2>
           <hr className="sectionLine" />
         </div>
         <div className="avatar">
-          <h2 className="avatarText">Select your Avatar:</h2>
+          <h2 className="avatarText">{t("Select your Avatar")}:</h2>
           <AvatarSelection
             selectedAvatar={localAvatar}
             onSelectAvatar={setLocalAvatar}
           />
         </div>
         <div className="username">
-          <h3 className="userNameText">User Name:</h3>
+          <h3 className="userNameText">{t("User Name")}:</h3>
           <input
             type="text"
             className="usernameInput"
             onChange={(e) => setInputValue(e.target.value)}
             defaultValue={userName}
-            placeholder="Insert your username"
+            placeholder={t("Insert your username")}
           />
         </div>
       </section>
       <section className="languageAndTheme">
         <div className="sectionSeparator">
-          <h2 className="locationText">Language and Theme</h2>
+          <h2 className="locationText">{t("Language and Theme")}</h2>
           <hr className="sectionLine" />
         </div>
         <div className="languageSelector">
-          <h3 className="languageLabel">Language:</h3>
+          <h3 className="languageLabel">{t("Language")}:</h3>
           <LanguageSelector
             selectedLanguage={localLanguage}
             onSelectLanguage={setLocalLanguage}
@@ -99,7 +102,7 @@ export function ModalSettings() {
       </section>
       <footer className="modalFooter">
         <Button color="green" borderRadius="6px" functionButton={SaveChanges}>
-          Save
+          {t("Save")}
         </Button>
       </footer>
     </Container>

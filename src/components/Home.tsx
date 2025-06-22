@@ -61,42 +61,42 @@ export function Home() {
         <Button
           color="green"
           borderRadius="6px"
-          width="110px"
+          width="130px"
           functionButton={() => console.log("BOTÃO FUNCIONA")}
         >
-          Start Game
+          {t("Start Game")}
         </Button>
         <Button
           color="blue"
           borderRadius="6px"
-          width="110px"
+          width="130px"
           functionButton={() => console.log("BOTÃO FUNCIONA")}
         >
-          How to Play
+          {t("How to Play")}
         </Button>
         <Button
           color="red"
           borderRadius="6px"
-          width="110px"
+          width="130px"
           functionButton={() => (
             setShowModalSettings(true), SelectDefaultAvatar()
           )}
         >
-          Settings
+          {t("Settings")}
         </Button>
       </div>
       {quitSettings && (
         <ModalMessage
-          textMessage="Do you want to quit without saving?"
-          textButton1="Cancel"
+          textMessage={t("Do you want to quit without saving?")}
+          textButton1={t("Cancel")}
           onClick1={() => setQuitSettings(false)}
-          textButton2="Yes"
+          textButton2={t("Yes")}
           onClick2={() => (setQuitSettings(false), setShowModalSettings(false))}
         ></ModalMessage>
       )}
       {emptyUserName && (
         <ModalMessage
-          textMessage="Your username cannot be empty!"
+          textMessage={t("Your username cannot be empty!")}
           textButton1="OK"
           onClick1={() => setEmptyUserName(false)}
         ></ModalMessage>

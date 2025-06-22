@@ -4,6 +4,7 @@ import { Home } from "./components/Home";
 import { ModalSettings } from "./components/ModalSettings";
 import { ModalGeneric } from "./generic/GenericModal";
 import { AppContext } from "./lib/context";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const {
@@ -12,6 +13,8 @@ function App() {
     setQuitSettings,
     settingsChanged,
   } = useContext(AppContext);
+
+  const { t } = useTranslation();
 
   function VerifyModifications() {
     if (settingsChanged) {
@@ -29,7 +32,7 @@ function App() {
           mobileFullScreen
           top="50%"
           left="50%"
-          title="Settings"
+          title={t("Settings")}
           width="400px"
         >
           <ModalSettings></ModalSettings>

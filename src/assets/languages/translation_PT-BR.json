@@ -1,3 +1,17 @@
 {
-  "Welcome": "Bem-Vindo"
+  "Cancel": "Cancelar",
+  "Do you want to quit without saving?": "Tem certeza que quer sair sem salvar?",
+  "How to Play": "Como Jogar",
+  "Insert your username": "Insira seu usuário",
+  "Language": "Idioma",
+  "Language and Theme": "Idioma e Tema",
+  "Save": "Salvar",
+  "Select your Avatar": "Selecione seu Avatar",
+  "Settings": "Configurações",
+  "Start Game": "Iniciar Jogo",
+  "User Name": "Nome de Usuário",
+  "User Settings": "Configurações de Usuário",
+  "Welcome": "Bem-Vindo",
+  "Yes": "Sim",
+  "Your username cannot be empty!": "Seu nome de usuário não pode estar vazio!"
 }

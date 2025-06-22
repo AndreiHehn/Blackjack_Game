@@ -1,3 +1,17 @@
 {
-  "Welcome": "Welcome"
+  "Cancel": "Cancel",
+  "Do you want to quit without saving?": "Do you want to quit without saving?",
+  "How to Play": "How to Play",
+  "Insert your username": "Insert your username",
+  "Language": "Language",
+  "Language and Theme": "Language and Theme",
+  "Save": "Save",
+  "Select your Avatar": "Select your Avatar",
+  "Settings": "Settings",
+  "Start Game": "Start Game",
+  "User Name": "User Name",
+  "User Settings": "User Settings",
+  "Welcome": "Welcome",
+  "Yes": "Yes",
+  "Your username cannot be empty!": "Your username cannot be empty!"
 }
