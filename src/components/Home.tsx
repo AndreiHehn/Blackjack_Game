@@ -9,6 +9,7 @@ import { useContext } from "react";
 import { AppContext } from "../lib/context.tsx";
 import { ModalMessage } from "../generic/ModalMessage/index.tsx";
 import defaultAvatar from "../../src/assets/icons/avatar_suits.png";
+import { useTranslation } from "react-i18next";
 
 export function Home() {
   const {
@@ -21,6 +22,8 @@ export function Home() {
     selectedAvatar,
     setSelectedAvatar,
   } = useContext(AppContext);
+
+  const { t } = useTranslation();
 
   function SelectDefaultAvatar() {
     if (!selectedAvatar) {
@@ -51,7 +54,7 @@ export function Home() {
           className="userAvatar"
         />
         <h2 className="subHeaderText">
-          Welcome, <span className="username">{userName}</span>!
+          {t("Welcome")}, <span className="username">{userName}</span>!
         </h2>
       </div>
       <div className="home-buttons">

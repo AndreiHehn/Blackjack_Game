@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  .userSettings {
+  .userSettings,
+  .languageAndTheme {
     margin-top: 20px;
   }
   .sectionSeparator {

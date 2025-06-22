@@ -3,6 +3,7 @@ import { Container } from "../styles/ModalSettings";
 import { AppContext } from "../lib/context";
 import { Button } from "../generic/Button";
 import { AvatarSelection } from "./AvatarSelection";
+import { LanguageSelector } from "./LanguageSelector";
 
 export function ModalSettings() {
   const {
@@ -63,6 +64,16 @@ export function ModalSettings() {
             defaultValue={userName}
             placeholder="Insert your username"
           />
+        </div>
+      </section>
+      <section className="languageAndTheme">
+        <div className="sectionSeparator">
+          <h2 className="locationText">Language and Theme</h2>
+          <hr className="sectionLine" />
+        </div>
+        <div className="languageSelector">
+          <h3 className="languageLabel">Language:</h3>
+          <LanguageSelector />
         </div>
       </section>
       <footer className="modalFooter">
