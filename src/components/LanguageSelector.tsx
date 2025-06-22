@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Select from "react-select";
-import { useEffect, useState } from "react";
-import i18n from "../lib/language.ts"; // ajuste conforme sua estrutura
+
+interface Props {
+  selectedLanguage: string;
+  onSelectLanguage: (lang: string) => void;
+}
 
 const languages = [
   {
@@ -21,16 +24,10 @@ const languages = [
   },
 ];
 
-export function LanguageSelector() {
-  const [selectedLanguage, setSelectedLanguage] = useState(() => {
-    return localStorage.getItem("blackjack_language") || "en";
-  });
-
-  useEffect(() => {
-    i18n.changeLanguage(selectedLanguage);
-    localStorage.setItem("blackjack_language", selectedLanguage);
-  }, [selectedLanguage]);
-
+export function LanguageSelector({
+  selectedLanguage,
+  onSelectLanguage,
+}: Props) {
   const customSingleValue = ({ data }: any) => (
     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
       <span>{data.flag}</span>
@@ -62,7 +59,7 @@ export function LanguageSelector() {
     <Select
       options={languages}
       value={languages.find((lang) => lang.value === selectedLanguage)}
-      onChange={(option) => setSelectedLanguage(option?.value ?? "en")}
+      onChange={(option) => onSelectLanguage(option?.value ?? "en")}
       components={{
         SingleValue: customSingleValue,
         Option: customOption,

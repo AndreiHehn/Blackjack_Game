@@ -4,6 +4,7 @@ import { AppContext } from "../lib/context";
 import { Button } from "../generic/Button";
 import { AvatarSelection } from "./AvatarSelection";
 import { LanguageSelector } from "./LanguageSelector";
+import i18n from "../lib/language";
 
 export function ModalSettings() {
   const {
@@ -14,27 +15,44 @@ export function ModalSettings() {
     setEmptyUserName,
     selectedAvatar,
     setSelectedAvatar,
+    selectedLanguage,
+    setSelectedLanguage,
   } = useContext(AppContext);
 
   const [inputValue, setInputValue] = useState(userName);
   const [localAvatar, setLocalAvatar] = useState(selectedAvatar);
+  const [localLanguage, setLocalLanguage] = useState(selectedLanguage);
 
-  // Verifies if one or more settings were changed
+  // Verifies if one or more settings were changed --> Avatar / Username / Language
   useEffect(() => {
-    if (inputValue !== userName || selectedAvatar !== localAvatar) {
+    if (
+      inputValue !== userName ||
+      selectedAvatar !== localAvatar ||
+      selectedLanguage !== localLanguage
+    ) {
       setSettingsChanged(true);
     } else {
       setSettingsChanged(false);
     }
-  }, [inputValue, userName, selectedAvatar, localAvatar]);
+  }, [
+    inputValue,
+    userName,
+    selectedAvatar,
+    localAvatar,
+    selectedLanguage,
+    localLanguage,
+  ]);
 
   // Saves the settings if the username is not empty
   function SaveChanges() {
     if (inputValue != "") {
       setUserName(inputValue);
       setSelectedAvatar(localAvatar);
+      setSelectedLanguage(localLanguage);
+      i18n.changeLanguage(localLanguage);
       localStorage.setItem("blackjack_username", inputValue);
       localStorage.setItem("blackjack_avatar", localAvatar);
+      localStorage.setItem("blackjack_language", localLanguage);
       setShowModalSettings(false);
     } else {
       setEmptyUserName(true);
@@ -73,7 +91,10 @@ export function ModalSettings() {
         </div>
         <div className="languageSelector">
           <h3 className="languageLabel">Language:</h3>
-          <LanguageSelector />
+          <LanguageSelector
+            selectedLanguage={localLanguage}
+            onSelectLanguage={setLocalLanguage}
+          />
         </div>
       </section>
       <footer className="modalFooter">

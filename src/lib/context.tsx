@@ -25,6 +25,8 @@ interface AppContextProps {
   setEmptyUserName: Dispatch<SetStateAction<boolean>>;
   selectedAvatar: string;
   setSelectedAvatar: Dispatch<SetStateAction<string>>;
+  selectedLanguage: string;
+  setSelectedLanguage: Dispatch<SetStateAction<string>>;
 }
 
 export function AppContextProvider({ children }: AppContextProviderProps) {
@@ -38,6 +40,9 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [selectedAvatar, setSelectedAvatar] = useState<string>(
     localStorage.getItem("blackjack_avatar") || ""
   );
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    return localStorage.getItem("blackjack_language") || "en";
+  });
 
   return (
     <AppContext.Provider
@@ -54,6 +59,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setEmptyUserName,
         selectedAvatar,
         setSelectedAvatar,
+        selectedLanguage,
+        setSelectedLanguage,
       }}
     >
       {children}
