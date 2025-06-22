@@ -7,6 +7,7 @@ export const Container = styled.main`
   align-items: center;
   justify-content: center;
   padding: 10px;
+  background-color: #fffbd0;
 
   .app-header {
     display: flex;

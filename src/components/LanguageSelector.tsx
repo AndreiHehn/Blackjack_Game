@@ -59,10 +59,10 @@ export function LanguageSelector({
           cursor: "pointer",
           color: "#333",
           backgroundColor: isSelected
-            ? "#D4D4D8"
+            ? "#fff9b6"
             : isFocused
-            ? "#e8e8e8"
-            : "#fff",
+            ? "#fef8be"
+            : "#fffbd0",
         }}
       >
         <img
@@ -96,7 +96,7 @@ export function LanguageSelector({
           borderColor: state.menuIsOpen ? "#aa0505" : "#71717a",
           padding: "0 4px",
           width: "150px",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#fffbd0",
           boxShadow: "none",
 
           "&:hover": {

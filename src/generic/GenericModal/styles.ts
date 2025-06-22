@@ -13,7 +13,7 @@ export interface Props {
 }
 
 export const Container = styled.div<Props>`
-  background-color: #f4f4f5;
+  background-color: #fffdeb;
   padding: 10px;
   display: flex;
   flex-direction: column;

@@ -35,7 +35,7 @@ export const Container = styled.div`
     }
 
     .usernameInput {
-      background-color: #ffffff;
+      background-color: #fffbd0;
       height: 24px;
       border: 1px solid;
       border-color: #71717a;
