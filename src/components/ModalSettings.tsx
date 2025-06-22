@@ -93,7 +93,7 @@ export function ModalSettings() {
           <hr className="sectionLine" />
         </div>
         <div className="languageSelector">
-          <h3 className="languageLabel">{t("Language")}:</h3>
+          <h3 className="languageText">{t("Language")}:</h3>
           <LanguageSelector
             selectedLanguage={localLanguage}
             onSelectLanguage={setLocalLanguage}

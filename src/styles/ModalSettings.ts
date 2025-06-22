@@ -66,6 +66,18 @@ export const Container = styled.div`
     }
   }
 
+  .languageSelector {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .languageText {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
   .modalFooter {
     margin-top: 20px;
     display: flex;
