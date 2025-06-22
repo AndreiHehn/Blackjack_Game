@@ -27,7 +27,7 @@ export const Container = styled.button<Props>`
   width: ${(props) => props.$width};
   height: ${(props) => props.$height};
 
-  padding: 3px 16px;
+  padding: 3px 12px;
   margin: ${(props) => props.$margin};
 
   line-height: 24px;
