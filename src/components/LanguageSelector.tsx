@@ -59,9 +59,9 @@ export function LanguageSelector({
           cursor: "pointer",
           color: "#333",
           backgroundColor: isSelected
-            ? "#ffb8b8" // hover
+            ? "#D4D4D8"
             : isFocused
-            ? "#ffd0d0" // selecionado
+            ? "#e8e8e8"
             : "#fff",
         }}
       >
@@ -113,10 +113,15 @@ export function LanguageSelector({
           height: "32px",
           display: "flex",
           alignItems: "center",
+          color: "#2f3640",
         }),
         indicatorsContainer: (base) => ({
           ...base,
           height: "32px",
+        }),
+        indicatorSeparator: (base) => ({
+          ...base,
+          display: "none",
         }),
         dropdownIndicator: (base) => ({
           ...base,

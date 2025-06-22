@@ -42,6 +42,7 @@ export const Container = styled.div`
       border-radius: 4px;
       padding: 5px;
       font-family: "Segoe UI";
+      color: #2f3640;
 
       &:hover {
         border-color: #2f3640;
