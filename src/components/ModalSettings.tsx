@@ -26,6 +26,7 @@ export function ModalSettings() {
   const [inputValue, setInputValue] = useState(userName);
   const [localAvatar, setLocalAvatar] = useState(selectedAvatar);
   const [localLanguage, setLocalLanguage] = useState(selectedLanguage);
+  const [localTheme, setLocalTheme] = useState(theme);
 
   const { t } = useTranslation();
 
@@ -34,7 +35,8 @@ export function ModalSettings() {
     if (
       inputValue !== userName ||
       selectedAvatar !== localAvatar ||
-      selectedLanguage !== localLanguage
+      selectedLanguage !== localLanguage ||
+      theme !== localTheme
     ) {
       setSettingsChanged(true);
     } else {
@@ -47,6 +49,8 @@ export function ModalSettings() {
     localAvatar,
     selectedLanguage,
     localLanguage,
+    theme,
+    localTheme,
   ]);
 
   // Saves the settings if the username is not empty
@@ -55,10 +59,12 @@ export function ModalSettings() {
       setUserName(inputValue);
       setSelectedAvatar(localAvatar);
       setSelectedLanguage(localLanguage);
+      setTheme(localTheme);
       i18n.changeLanguage(localLanguage);
       localStorage.setItem("blackjack_username", inputValue);
       localStorage.setItem("blackjack_avatar", localAvatar);
       localStorage.setItem("blackjack_language", localLanguage);
+      localStorage.setItem("blackjack_theme", localTheme);
       setShowModalSettings(false);
     } else {
       setEmptyUserName(true);
@@ -111,8 +117,8 @@ export function ModalSettings() {
               color="#aa0505"
               bgColor="#fffbd0"
               value="light"
-              checked={theme == "light"}
-              onChange={(val) => setTheme(val)}
+              checked={localTheme == "light"}
+              onChange={(val) => setLocalTheme(val)}
             ></RadioButton>
             <RadioButton
               name="themeRB"
@@ -120,8 +126,8 @@ export function ModalSettings() {
               color="#aa0505"
               bgColor="#fffbd0"
               value="dark"
-              checked={theme == "dark"}
-              onChange={(val) => setTheme(val)}
+              checked={localTheme == "dark"}
+              onChange={(val) => setLocalTheme(val)}
             ></RadioButton>
             <RadioButton
               name="themeRB"
@@ -129,8 +135,8 @@ export function ModalSettings() {
               color="#aa0505"
               bgColor="#fffbd0"
               value="system"
-              checked={theme == "system"}
-              onChange={(val) => setTheme(val)}
+              checked={localTheme == "system"}
+              onChange={(val) => setLocalTheme(val)}
             ></RadioButton>
           </div>
         </div>

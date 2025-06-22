@@ -47,7 +47,9 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
     return localStorage.getItem("blackjack_language") || "en";
   });
 
-  const [theme, setTheme] = useState<string>("light");
+  const [theme, setTheme] = useState<string>(
+    localStorage.getItem("blackjack_theme") || "light"
+  );
 
   return (
     <AppContext.Provider
