@@ -12,6 +12,7 @@ export const Container = styled.label<Props>`
   font-family: "Segoe UI";
   font-size: 14px;
   width: fit-content;
+  color: var(--text-primary);
   cursor: pointer;
 
   input[type="radio"] {

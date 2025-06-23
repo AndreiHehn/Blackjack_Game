@@ -55,6 +55,10 @@ export const Container = styled.div`
     transition: transform 0.2s;
     z-index: 1;
 
+    path {
+      fill: var(--text-primary);
+    }
+
     &:hover {
       transform: translateY(-50%) scale(1.1);
     }

@@ -7,7 +7,7 @@ export const Container = styled.main`
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background-color: #fffbd0;
+  background-color: var(--background-primary);
 
   .app-header {
     display: flex;
@@ -28,6 +28,7 @@ export const Container = styled.main`
         font-family: "Monoton", sans-serif;
         font-weight: 600;
         font-size: 72px;
+        color: var(--text-primary);
 
         @media (max-width: 1050px) {
           font-size: 52px;
@@ -93,6 +94,7 @@ export const Container = styled.main`
 
     .subHeaderText {
       font-weight: 600;
+      color: var(--text-primary);
     }
 
     .username {

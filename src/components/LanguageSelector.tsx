@@ -39,7 +39,7 @@ export function LanguageSelector({
         alt={`${data.label} flag`}
         style={{ width: 20, height: 20 }}
       />
-      <span>{data.label}</span>
+      <span style={{ color: "var(--text-primary)" }}>{data.label}</span>
     </div>
   );
 
@@ -57,12 +57,12 @@ export function LanguageSelector({
           gap: "8px",
           padding: "10px",
           cursor: "pointer",
-          color: "#333",
+          color: "var(--text-primary)",
           backgroundColor: isSelected
-            ? "#fff9b6"
+            ? "var(--background-secondary)"
             : isFocused
-            ? "#fef8be"
-            : "#fffbd0",
+            ? "var(--background-tertiary)"
+            : "var(--background-primary)",
         }}
       >
         <img
@@ -93,10 +93,10 @@ export function LanguageSelector({
           fontSize: "16px",
           fontFamily: "Segoe UI",
           borderRadius: "6px",
-          borderColor: state.menuIsOpen ? "#aa0505" : "#71717a",
+          borderColor: state.menuIsOpen ? "var(--line-color)" : "#71717a",
           padding: "0 4px",
           width: "150px",
-          backgroundColor: "#fffbd0",
+          backgroundColor: "var(--background-primary)",
           boxShadow: "none",
 
           "&:hover": {
@@ -104,7 +104,7 @@ export function LanguageSelector({
           },
 
           "&:focus": {
-            borderColor: "#aa0505",
+            borderColor: "var(--line-color)",
           },
         }),
         valueContainer: (base) => ({
@@ -126,7 +126,7 @@ export function LanguageSelector({
         dropdownIndicator: (base) => ({
           ...base,
           padding: "2px",
-          color: "#2f3640",
+          color: "var(--text-primary)",
         }),
         input: (base) => ({
           ...base,

@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 300px;
   height: 175px;
   padding: 20px 20px 20px 20px;
-  background-color: #fffdeb;
+  background-color: var(--modal-background);
   border-radius: 9px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   position: fixed;
@@ -24,6 +24,7 @@ export const Container = styled.div`
     .messageText {
       font-size: 16px;
       font-weight: 600;
+      color: var(--text-primary);
     }
   }
 

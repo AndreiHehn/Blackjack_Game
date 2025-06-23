@@ -15,13 +15,14 @@ export const Container = styled.div`
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;
+    color: var(--text-primary);
   }
 
   .sectionLine {
     width: 100%;
     height: 0;
     border: none;
-    border-top: 1px solid #aa0505;
+    border-top: 1px solid var(--line-color);
   }
 
   .username {
@@ -32,25 +33,26 @@ export const Container = styled.div`
     .userNameText {
       font-size: 14px;
       font-weight: 600;
+      color: var(--text-primary);
     }
 
     .usernameInput {
-      background-color: #fffbd0;
+      background-color: var(--background-primary);
       height: 24px;
       border: 1px solid;
       border-color: #71717a;
       border-radius: 4px;
       padding: 5px;
       font-family: "Segoe UI";
-      color: #2f3640;
+      color: var(--text-primary);
 
       &:hover {
-        border-color: #2f3640;
+        border-color: var(--text-primary);
       }
 
       &:focus {
         outline: none;
-        border-color: #aa0505;
+        border-color: var(--line-color);
       }
     }
   }
@@ -64,6 +66,7 @@ export const Container = styled.div`
       font-size: 14px;
       font-weight: 600;
       align-self: flex-start;
+      color: var(--text-primary);
     }
   }
 
@@ -76,18 +79,19 @@ export const Container = styled.div`
     .languageText {
       font-size: 14px;
       font-weight: 600;
+      color: var(--text-primary);
     }
   }
 
   .themeSelector {
     margin-top: 10px;
-    /* display: flex;
-    align-items: center; */
     gap: 10px;
+
     .themeText {
       font-size: 14px;
       font-weight: 600;
       margin-bottom: 10px;
+      color: var(--text-primary);
     }
 
     .radioButtons {

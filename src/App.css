@@ -5,11 +5,25 @@
 }
 
 .light-theme {
-  --background-color: #fffbd0;
+  --background-primary: #fffbd0;
+  --background-secondary: #fff589;
+  --background-tertiary: #fff7aa;
+  --modal-background: #fffdeb;
+
+  --text-primary: #2f3640;
+
+  --line-color: #aa0505;
 }
 
 .dark-theme {
-  --background-color: #71717a;
+  --background-primary: #191919;
+  --background-secondary: #303030;
+  --background-tertiary: #525252;
+  --modal-background: #2c2c2c;
+
+  --text-primary: #f4f4f5;
+
+  --line-color: #f4f4f5;
 }
 
 h1,

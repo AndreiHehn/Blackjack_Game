@@ -13,7 +13,7 @@ export interface Props {
 }
 
 export const Container = styled.div<Props>`
-  background-color: #fffdeb;
+  background-color: var(--modal-background);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -54,6 +54,7 @@ export const Container = styled.div<Props>`
 
   .modalTitle {
     font-size: 20px;
+    color: var(--text-primary);
   }
   .closeButton {
     display: flex;
@@ -65,6 +66,10 @@ export const Container = styled.div<Props>`
     svg {
       width: 16px;
       height: 16px;
+
+      path {
+        fill: var(--text-primary);
+      }
     }
 
     &:hover {
