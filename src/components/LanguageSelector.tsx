@@ -139,6 +139,19 @@ export function LanguageSelector({
           display: "flex",
           alignItems: "center",
         }),
+        menu: (base) => ({
+          ...base,
+          backgroundColor: "var(--background-primary)", // <- define fundo do menu
+          borderRadius: "6px",
+          overflow: "hidden",
+          marginTop: "2px",
+        }),
+
+        menuList: (base) => ({
+          ...base,
+          padding: 0, // remove espaços internos
+          backgroundColor: "var(--background-primary)", // <- igual ao menu
+        }),
       }}
     />
   );
