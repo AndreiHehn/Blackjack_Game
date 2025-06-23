@@ -93,7 +93,7 @@ export function LanguageSelector({
           fontSize: "16px",
           fontFamily: "Segoe UI",
           borderRadius: "6px",
-          borderColor: state.menuIsOpen ? "var(--line-color)" : "#71717a",
+          borderColor: state.menuIsOpen ? "var(--app-color)" : "#71717a",
           padding: "0 4px",
           width: "150px",
           backgroundColor: "var(--background-primary)",
@@ -104,7 +104,7 @@ export function LanguageSelector({
           },
 
           "&:focus": {
-            borderColor: "var(--line-color)",
+            borderColor: "var(--app-color)",
           },
         }),
         valueContainer: (base) => ({

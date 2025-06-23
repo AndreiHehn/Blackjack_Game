@@ -114,8 +114,8 @@ export function ModalSettings() {
             <RadioButton
               name="themeRB"
               text={t("Light Theme")}
-              color="#aa0505"
-              bgColor="#fffbd0"
+              color="var(--app-color)"
+              bgColor="var(--background-primary)"
               value="light"
               checked={localTheme == "light"}
               onChange={(val) => setLocalTheme(val)}
@@ -123,8 +123,8 @@ export function ModalSettings() {
             <RadioButton
               name="themeRB"
               text={t("Dark Theme")}
-              color="#aa0505"
-              bgColor="#fffbd0"
+              color="var(--app-color)"
+              bgColor="var(--background-primary)"
               value="dark"
               checked={localTheme == "dark"}
               onChange={(val) => setLocalTheme(val)}
@@ -132,8 +132,8 @@ export function ModalSettings() {
             <RadioButton
               name="themeRB"
               text={t("System Theme")}
-              color="#aa0505"
-              bgColor="#fffbd0"
+              color="var(--app-color)"
+              bgColor="var(--background-primary)"
               value="system"
               checked={localTheme == "system"}
               onChange={(val) => setLocalTheme(val)}

@@ -22,7 +22,7 @@ export const Container = styled.div`
     width: 100%;
     height: 0;
     border: none;
-    border-top: 1px solid var(--line-color);
+    border-top: 1px solid var(--app-color);
   }
 
   .username {
@@ -52,7 +52,7 @@ export const Container = styled.div`
 
       &:focus {
         outline: none;
-        border-color: var(--line-color);
+        border-color: var(--app-color);
       }
     }
   }

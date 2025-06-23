@@ -12,7 +12,7 @@
 
   --text-primary: #2f3640;
 
-  --line-color: #aa0505;
+  --app-color: #aa0505;
 }
 
 .dark-theme {
@@ -23,7 +23,7 @@
 
   --text-primary: #f4f4f5;
 
-  --line-color: #f4f4f5;
+  --app-color: #f4f4f5;
 }
 
 h1,
