@@ -141,7 +141,7 @@ export function LanguageSelector({
         }),
         menu: (base) => ({
           ...base,
-          backgroundColor: "var(--background-primary)", // <- define fundo do menu
+          backgroundColor: "var(--background-primary)",
           borderRadius: "6px",
           overflow: "hidden",
           marginTop: "2px",
@@ -149,8 +149,8 @@ export function LanguageSelector({
 
         menuList: (base) => ({
           ...base,
-          padding: 0, // remove espaços internos
-          backgroundColor: "var(--background-primary)", // <- igual ao menu
+          padding: 0,
+          backgroundColor: "var(--background-primary)",
         }),
       }}
     />
