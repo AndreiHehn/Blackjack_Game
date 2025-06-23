@@ -27,6 +27,7 @@ export function Home() {
     setTheme,
     resetSettings,
     setResetSettings,
+    setActivePage,
   } = useContext(AppContext);
 
   const { t } = useTranslation();
@@ -85,7 +86,7 @@ export function Home() {
           color="green"
           borderRadius="6px"
           width="130px"
-          functionButton={() => console.log("BOTÃO FUNCIONA")}
+          functionButton={() => setActivePage("Game")}
         >
           {t("Start Game")}
         </Button>

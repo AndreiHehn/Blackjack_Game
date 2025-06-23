@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import "./App.css";
 import { Home } from "./components/Home";
+import { Game } from "./components/Game";
 import { ModalSettings } from "./components/ModalSettings";
 import { ModalGeneric } from "./generic/GenericModal";
 import { AppContext } from "./lib/context";
@@ -13,6 +14,7 @@ function App() {
     setQuitSettings,
     settingsChanged,
     theme,
+    activePage,
   } = useContext(AppContext);
 
   const { t } = useTranslation();
@@ -40,7 +42,7 @@ function App() {
   }
   return (
     <>
-      <Home />
+      {activePage == "Home" ? <Home /> : activePage == "Game" ? <Game /> : null}
       {showModalSettings && (
         <ModalGeneric
           functionCloseModal={() => VerifyModifications()}

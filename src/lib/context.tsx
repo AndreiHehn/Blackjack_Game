@@ -29,6 +29,8 @@ interface AppContextProps {
   setSelectedLanguage: Dispatch<SetStateAction<string>>;
   resetSettings: boolean;
   setResetSettings: Dispatch<SetStateAction<boolean>>;
+  activePage: string;
+  setActivePage: Dispatch<SetStateAction<string>>;
 
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
@@ -54,6 +56,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [settingsChanged, setSettingsChanged] = useState<boolean>(false);
   const [emptyUserName, setEmptyUserName] = useState<boolean>(false);
   const [resetSettings, setResetSettings] = useState<boolean>(false);
+  const [activePage, setActivePage] = useState<string>("Home");
 
   return (
     <AppContext.Provider
@@ -74,6 +77,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setSelectedLanguage,
         resetSettings,
         setResetSettings,
+        activePage,
+        setActivePage,
         theme,
         setTheme,
       }}
