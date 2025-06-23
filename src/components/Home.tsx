@@ -10,17 +10,23 @@ import { AppContext } from "../lib/context.tsx";
 import { ModalMessage } from "../generic/ModalMessage/index.tsx";
 import defaultAvatar from "../../src/assets/icons/avatar_suits.png";
 import { useTranslation } from "react-i18next";
+import i18n from "../lib/language.ts";
 
 export function Home() {
   const {
     setShowModalSettings,
     userName,
+    setUserName,
     quitSettings,
     setQuitSettings,
     emptyUserName,
     setEmptyUserName,
     selectedAvatar,
     setSelectedAvatar,
+    setSelectedLanguage,
+    setTheme,
+    resetSettings,
+    setResetSettings,
   } = useContext(AppContext);
 
   const { t } = useTranslation();
@@ -29,6 +35,23 @@ export function Home() {
     if (!selectedAvatar) {
       setSelectedAvatar(defaultAvatar);
     }
+  }
+
+  function ResetToDefaults() {
+    // Atualiza os estados do contexto
+    setUserName("Player 001");
+    setSelectedAvatar(defaultAvatar);
+    setSelectedLanguage("en");
+    setTheme("light");
+
+    // Atualiza o localStorage
+    localStorage.setItem("blackjack_username", "Player 001");
+    localStorage.setItem("blackjack_avatar", defaultAvatar);
+    localStorage.setItem("blackjack_language", "en");
+    localStorage.setItem("blackjack_theme", "light");
+
+    // Atualiza o idioma ativo imediatamente
+    i18n.changeLanguage("en");
   }
 
   return (
@@ -99,6 +122,19 @@ export function Home() {
           textMessage={t("Your username cannot be empty!")}
           textButton1="OK"
           onClick1={() => setEmptyUserName(false)}
+        ></ModalMessage>
+      )}
+      {resetSettings && (
+        <ModalMessage
+          textMessage={t("Do you want to reset the settings?")}
+          textButton1={t("Cancel")}
+          onClick1={() => setResetSettings(false)}
+          textButton2={t("Yes")}
+          onClick2={() => (
+            setResetSettings(false),
+            ResetToDefaults(),
+            setShowModalSettings(false)
+          )}
         ></ModalMessage>
       )}
     </Container>

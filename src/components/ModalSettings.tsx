@@ -19,6 +19,8 @@ export function ModalSettings() {
     setSelectedAvatar,
     selectedLanguage,
     setSelectedLanguage,
+    setResetSettings,
+
     setTheme,
     theme,
   } = useContext(AppContext);
@@ -30,7 +32,7 @@ export function ModalSettings() {
 
   const { t } = useTranslation();
 
-  // Verifies if one or more settings were changed --> Avatar / Username / Language
+  // Verifies if one or more settings were changed --> Avatar / Username / Language / Theme
   useEffect(() => {
     if (
       inputValue !== userName ||
@@ -52,6 +54,13 @@ export function ModalSettings() {
     theme,
     localTheme,
   ]);
+
+  useEffect(() => {
+    setInputValue(userName);
+    setLocalAvatar(selectedAvatar);
+    setLocalLanguage(selectedLanguage);
+    setLocalTheme(theme);
+  }, [userName, selectedAvatar, selectedLanguage, theme]);
 
   // Saves the settings if the username is not empty
   function SaveChanges() {
@@ -91,7 +100,7 @@ export function ModalSettings() {
             type="text"
             className="usernameInput"
             onChange={(e) => setInputValue(e.target.value)}
-            defaultValue={userName}
+            defaultValue={inputValue}
             placeholder={t("Insert your username")}
           />
         </div>
@@ -142,6 +151,13 @@ export function ModalSettings() {
         </div>
       </section>
       <footer className="modalFooter">
+        <Button
+          color="gray"
+          borderRadius="6px"
+          functionButton={() => setResetSettings(true)}
+        >
+          {t("Reset")}
+        </Button>
         <Button color="green" borderRadius="6px" functionButton={SaveChanges}>
           {t("Save")}
         </Button>

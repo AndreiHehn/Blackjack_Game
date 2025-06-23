@@ -27,6 +27,8 @@ interface AppContextProps {
   setSelectedAvatar: Dispatch<SetStateAction<string>>;
   selectedLanguage: string;
   setSelectedLanguage: Dispatch<SetStateAction<string>>;
+  resetSettings: boolean;
+  setResetSettings: Dispatch<SetStateAction<boolean>>;
 
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
@@ -36,10 +38,6 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [userName, setUserName] = useState(() => {
     return localStorage.getItem("blackjack_username") || "Player 001";
   });
-  const [showModalSettings, setShowModalSettings] = useState<boolean>(false);
-  const [quitSettings, setQuitSettings] = useState<boolean>(false);
-  const [settingsChanged, setSettingsChanged] = useState<boolean>(false);
-  const [emptyUserName, setEmptyUserName] = useState<boolean>(false);
   const [selectedAvatar, setSelectedAvatar] = useState<string>(
     localStorage.getItem("blackjack_avatar") || ""
   );
@@ -50,6 +48,12 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [theme, setTheme] = useState<string>(
     localStorage.getItem("blackjack_theme") || "light"
   );
+
+  const [showModalSettings, setShowModalSettings] = useState<boolean>(false);
+  const [quitSettings, setQuitSettings] = useState<boolean>(false);
+  const [settingsChanged, setSettingsChanged] = useState<boolean>(false);
+  const [emptyUserName, setEmptyUserName] = useState<boolean>(false);
+  const [resetSettings, setResetSettings] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
@@ -68,7 +72,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setSelectedAvatar,
         selectedLanguage,
         setSelectedLanguage,
-
+        resetSettings,
+        setResetSettings,
         theme,
         setTheme,
       }}
