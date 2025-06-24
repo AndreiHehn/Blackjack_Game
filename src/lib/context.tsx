@@ -31,7 +31,10 @@ interface AppContextProps {
   setResetSettings: Dispatch<SetStateAction<boolean>>;
   activePage: string;
   setActivePage: Dispatch<SetStateAction<string>>;
-
+  isFadingIn: boolean;
+  setIsFadingIn: Dispatch<SetStateAction<boolean>>;
+  isFadingOut: boolean;
+  setIsFadingOut: Dispatch<SetStateAction<boolean>>;
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
 }
@@ -57,6 +60,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [emptyUserName, setEmptyUserName] = useState<boolean>(false);
   const [resetSettings, setResetSettings] = useState<boolean>(false);
   const [activePage, setActivePage] = useState<string>("Home");
+  const [isFadingIn, setIsFadingIn] = useState<boolean>(false);
+  const [isFadingOut, setIsFadingOut] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
@@ -81,6 +86,10 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setActivePage,
         theme,
         setTheme,
+        isFadingIn,
+        setIsFadingIn,
+        isFadingOut,
+        setIsFadingOut,
       }}
     >
       {children}

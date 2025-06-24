@@ -12,7 +12,11 @@ import defaultAvatar from "../../src/assets/icons/avatar_suits.png";
 import { useTranslation } from "react-i18next";
 import i18n from "../lib/language.ts";
 
-export function Home() {
+interface HomeProps {
+  goToPage: () => void;
+}
+
+export function Home({ goToPage }: HomeProps) {
   const {
     setShowModalSettings,
     userName,
@@ -27,7 +31,6 @@ export function Home() {
     setTheme,
     resetSettings,
     setResetSettings,
-    setActivePage,
   } = useContext(AppContext);
 
   const { t } = useTranslation();
@@ -39,19 +42,16 @@ export function Home() {
   }
 
   function ResetToDefaults() {
-    // Atualiza os estados do contexto
     setUserName("Player 001");
     setSelectedAvatar(defaultAvatar);
     setSelectedLanguage("en");
     setTheme("light");
 
-    // Atualiza o localStorage
     localStorage.setItem("blackjack_username", "Player 001");
     localStorage.setItem("blackjack_avatar", defaultAvatar);
     localStorage.setItem("blackjack_language", "en");
     localStorage.setItem("blackjack_theme", "light");
 
-    // Atualiza o idioma ativo imediatamente
     i18n.changeLanguage("en");
   }
 
@@ -71,6 +71,7 @@ export function Home() {
           <SpadesIcon className="suit-icon" />
         </div>
       </header>
+
       <div className="subHeader">
         <img
           src={selectedAvatar ? selectedAvatar : defaultAvatar}
@@ -81,15 +82,17 @@ export function Home() {
           {t("Welcome")}, <span className="username">{userName}</span>!
         </h2>
       </div>
+
       <div className="home-buttons">
         <Button
           color="green"
           borderRadius="6px"
           width="130px"
-          functionButton={() => setActivePage("Game")}
+          functionButton={goToPage}
         >
           {t("Start Game")}
         </Button>
+
         <Button
           color="blue"
           borderRadius="6px"
@@ -98,6 +101,7 @@ export function Home() {
         >
           {t("How to Play")}
         </Button>
+
         <Button
           color="red"
           borderRadius="6px"
@@ -109,6 +113,7 @@ export function Home() {
           {t("Settings")}
         </Button>
       </div>
+
       {quitSettings && (
         <ModalMessage
           textMessage={t("Do you want to quit without saving?")}
@@ -116,15 +121,17 @@ export function Home() {
           onClick1={() => setQuitSettings(false)}
           textButton2={t("Yes")}
           onClick2={() => (setQuitSettings(false), setShowModalSettings(false))}
-        ></ModalMessage>
+        />
       )}
+
       {emptyUserName && (
         <ModalMessage
           textMessage={t("Your username cannot be empty!")}
           textButton1="OK"
           onClick1={() => setEmptyUserName(false)}
-        ></ModalMessage>
+        />
       )}
+
       {resetSettings && (
         <ModalMessage
           textMessage={t("Do you want to reset the settings?")}
@@ -136,7 +143,7 @@ export function Home() {
             ResetToDefaults(),
             setShowModalSettings(false)
           )}
-        ></ModalMessage>
+        />
       )}
     </Container>
   );
