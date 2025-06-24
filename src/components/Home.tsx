@@ -87,7 +87,8 @@ export function Home({ goToPage }: HomeProps) {
         <Button
           color="green"
           borderRadius="6px"
-          width="130px"
+          width="150px"
+          height="40px"
           functionButton={goToPage}
         >
           {t("Start Game")}
@@ -96,7 +97,8 @@ export function Home({ goToPage }: HomeProps) {
         <Button
           color="blue"
           borderRadius="6px"
-          width="130px"
+          width="150px"
+          height="40px"
           functionButton={() => console.log("BOTÃO FUNCIONA")}
         >
           {t("How to Play")}
@@ -105,7 +107,8 @@ export function Home({ goToPage }: HomeProps) {
         <Button
           color="red"
           borderRadius="6px"
-          width="130px"
+          width="150px"
+          height="40px"
           functionButton={() => (
             setShowModalSettings(true), SelectDefaultAvatar()
           )}

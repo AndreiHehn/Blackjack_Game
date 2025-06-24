@@ -83,7 +83,7 @@ export const Container = styled.main`
     }
 
     .userAvatar {
-      width: 125px;
+      width: 175px;
       border: 3px solid #aa0505;
       border-radius: 50%;
 
@@ -95,6 +95,7 @@ export const Container = styled.main`
     .subHeaderText {
       font-weight: 600;
       color: var(--text-primary);
+      font-size: 30px;
     }
 
     .username {
