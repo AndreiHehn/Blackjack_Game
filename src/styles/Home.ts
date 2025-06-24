@@ -110,7 +110,11 @@ export const Container = styled.main`
 
   .home-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+    }
   }
 `;
