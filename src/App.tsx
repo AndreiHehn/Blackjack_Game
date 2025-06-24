@@ -51,7 +51,7 @@ function App() {
     const durations = {
       fadeOutCurrent: 1000,
       fadeInTransition: 1000,
-      waitBeforeFadeOutTransition: 7000,
+      waitBeforeFadeOutTransition: 5000,
       fadeOutTransition: 1000,
       fadeInTarget: 1000,
     };
