@@ -96,6 +96,10 @@ export const Container = styled.main`
       font-weight: 600;
       color: var(--text-primary);
       font-size: 30px;
+
+      @media (max-width: 720px) {
+        font-size: 20px;
+      }
     }
 
     .username {
