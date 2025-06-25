@@ -117,4 +117,9 @@ export const Container = styled.main`
       flex-direction: column;
     }
   }
+
+  .background {
+    width: 120px;
+    height: 168px;
+  }
 `;
