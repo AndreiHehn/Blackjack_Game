@@ -1,7 +1,6 @@
 import { Button } from "../generic/Button/index.tsx";
 import { Container } from "../styles/Game.ts";
 import { Card } from "./Card.tsx";
-import RedBackground from "../assets/icons/RedBackground.png";
 
 interface GameProps {
   goToPage: () => void;

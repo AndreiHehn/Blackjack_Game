@@ -10,8 +10,6 @@ import BlackQueenIcon from "../assets/icons/BlackQueenIcon.png";
 import RedQueenIcon from "../assets/icons/RedQueenIcon.png";
 import BlackJackIcon from "../assets/icons/BlackJackIcon.png";
 import RedJackIcon from "../assets/icons/RedJackIcon.png";
-import BlackBackground from "../assets/icons/BlackBackground.png";
-import RedBackground from "../assets/icons/RedBackground.png";
 
 interface Props {
   isFlipped: boolean;
