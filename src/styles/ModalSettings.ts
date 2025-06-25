@@ -29,6 +29,7 @@ export const Container = styled.div`
     margin-top: 10px;
     display: flex;
     gap: 10px;
+    align-items: center;
 
     .userNameText {
       font-size: 14px;
@@ -38,12 +39,13 @@ export const Container = styled.div`
 
     .usernameInput {
       background-color: var(--background-primary);
-      height: 24px;
+      height: 32px;
       border: 1px solid;
       border-color: #71717a;
       border-radius: 4px;
       padding: 5px;
       font-family: "Segoe UI";
+      font-size: 16px;
       color: var(--text-primary);
 
       &:hover {
