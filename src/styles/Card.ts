@@ -13,8 +13,6 @@ export const Container = styled.div<Props>`
     height: 168px;
     border-radius: 10px;
     position: relative;
-    top: 50%;
-    left: 50%;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   }
   .backgroundImage {

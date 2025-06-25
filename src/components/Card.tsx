@@ -15,10 +15,9 @@ interface Props {
   isFlipped: boolean;
   suit: "clubs" | "spades" | "hearts" | "diamonds";
   symbol: string;
-  value: number;
 }
 
-export function Card({ isFlipped, suit, symbol, value }: Props) {
+export function Card({ isFlipped, suit, symbol }: Props) {
   return (
     <Container $suit={suit} $isFlipped={isFlipped}>
       <div className="backgroundImage"></div>
