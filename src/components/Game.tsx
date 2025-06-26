@@ -3,6 +3,7 @@ import { Button } from "../generic/Button";
 import { Container } from "../styles/Game";
 import { Card } from "./Card";
 import { Header } from "./Header";
+import { t } from "i18next";
 
 type Suit = "diamonds" | "clubs" | "hearts" | "spades";
 type Symbol =
@@ -24,6 +25,11 @@ interface GameProps {
   goToPage: () => void;
 }
 
+interface PlayingCard {
+  symbol: Symbol;
+  suit: Suit;
+}
+
 const symbols: Symbol[] = [
   "A",
   "2",
@@ -41,42 +47,44 @@ const symbols: Symbol[] = [
 ];
 const suits: Suit[] = ["diamonds", "clubs", "hearts", "spades"];
 
-interface PlayingCard {
-  symbol: Symbol;
-  suit: Suit;
-}
+const generateDeck = (): PlayingCard[] => {
+  const deck: PlayingCard[] = [];
+  for (const suit of suits) {
+    for (const symbol of symbols) {
+      deck.push({ symbol, suit });
+    }
+  }
+  return deck;
+};
 
 export function Game({ goToPage }: GameProps) {
-  const [cards, setCards] = useState<PlayingCard[]>([
-    { symbol: "J", suit: "spades" },
-    { symbol: "5", suit: "hearts" },
-  ]);
+  const [deck, setDeck] = useState<PlayingCard[]>(generateDeck());
+  const [cards, setCards] = useState<PlayingCard[]>([]);
 
-  /** Função para obter valor da carta */
   const getCardValue = (symbol: Symbol): number => {
     if (symbol === "A") return 11;
     if (["K", "Q", "J"].includes(symbol)) return 10;
-    return parseInt(symbol); // "2" a "10"
+    return parseInt(symbol);
   };
 
-  /** Sorteia duas cartas aleatórias */
   const pickRandomCard = useCallback(() => {
-    const randomCard = (): PlayingCard => ({
-      symbol: symbols[Math.floor(Math.random() * symbols.length)],
-      suit: suits[Math.floor(Math.random() * suits.length)],
-    });
+    if (deck.length === 0) return; // fim do baralho
 
-    const first = randomCard();
-    const second = randomCard();
-    setCards([first, second]);
-  }, []);
+    const index = Math.floor(Math.random() * deck.length);
+    const chosen = deck[index];
 
-  const cardValue =
-    getCardValue(cards[0].symbol) + getCardValue(cards[1].symbol);
+    setCards((prev) => [...prev, chosen]);
+    setDeck((prev) => prev.filter((_, i) => i !== index)); // remove carta do baralho
+  }, [deck]);
+
+  const cardValue = cards.reduce(
+    (total, card) => total + getCardValue(card.symbol),
+    0
+  );
 
   return (
     <Container>
-      <Header leaveGame={goToPage}></Header>
+      <Header leaveGame={goToPage} />
 
       <Button
         color="blue"
@@ -87,10 +95,10 @@ export function Game({ goToPage }: GameProps) {
         Pick Cards
       </Button>
 
-      {/* <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+      <div className="playerCards">
         {cards.map((card, index) => (
           <Card
-            key={index}
+            key={`${card.symbol}-${card.suit}-${index}`}
             isFlipped={true}
             symbol={card.symbol}
             suit={card.suit}
@@ -98,7 +106,42 @@ export function Game({ goToPage }: GameProps) {
         ))}
       </div>
 
-      <h2 className="cardvalue">Valor total: {cardValue}</h2> */}
+      <h2 className="cardvalue">Valor total: {cardValue}</h2>
+
+      <footer className="actionButtons">
+        <Button
+          color="red"
+          borderRadius="6px"
+          width="130px"
+          functionButton={() => console.log("Hit")}
+        >
+          {t("Hit")}
+        </Button>
+        <Button
+          color="gray"
+          borderRadius="6px"
+          width="130px"
+          functionButton={() => console.log("Stand")}
+        >
+          {t("Stand")}
+        </Button>
+        <Button
+          color="red"
+          borderRadius="6px"
+          width="130px"
+          functionButton={() => console.log("Double")}
+        >
+          {t("Double")}
+        </Button>
+        <Button
+          color="gray"
+          borderRadius="6px"
+          width="130px"
+          functionButton={() => console.log("Split")}
+        >
+          {t("Split")}
+        </Button>
+      </footer>
     </Container>
   );
 }
