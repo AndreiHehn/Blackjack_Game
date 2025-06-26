@@ -17,6 +17,7 @@ body {
   --text-primary: #2f3640;
 
   --app-color: #aa0505;
+  --header-color: #aa0505;
 }
 
 .dark-theme {
@@ -28,6 +29,7 @@ body {
   --text-primary: #f4f4f5;
 
   --app-color: #f4f4f5;
+  --header-color: #525252;
 }
 
 h1,

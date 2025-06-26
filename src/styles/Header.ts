@@ -1,0 +1,75 @@
+import styled from "styled-components";
+
+export const Container = styled.header`
+  position: relative;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  left: 0;
+  background-color: var(--header-color);
+  display: flex;
+  align-items: center;
+
+  .app-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    gap: 16px;
+
+    .app-title {
+      display: flex;
+      gap: 16px;
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+        text-align: center;
+      }
+      h1 {
+        font-family: "Monoton", sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        color: var(--text-primary);
+
+        @media (max-width: 500px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .left-icons,
+    .right-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .suit-icon {
+      height: 30px;
+      width: 30px;
+    }
+
+    .red-suit {
+      path {
+        fill: #ff0000;
+      }
+    }
+  }
+
+  .homeIcon {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    path {
+      fill: #f4f4f5;
+    }
+
+    &:hover {
+      path {
+        fill: rgb(174, 174, 174);
+      }
+    }
+  }
+`;

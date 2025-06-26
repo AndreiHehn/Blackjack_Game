@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { Button } from "../generic/Button";
 import { Container } from "../styles/Game";
 import { Card } from "./Card";
+import { Header } from "./Header";
 
 type Suit = "diamonds" | "clubs" | "hearts" | "spades";
 type Symbol =
@@ -75,14 +76,7 @@ export function Game({ goToPage }: GameProps) {
 
   return (
     <Container>
-      <Button
-        color="green"
-        borderRadius="6px"
-        width="130px"
-        functionButton={goToPage}
-      >
-        Back to Home
-      </Button>
+      <Header leaveGame={goToPage}></Header>
 
       <Button
         color="blue"
@@ -93,7 +87,7 @@ export function Game({ goToPage }: GameProps) {
         Pick Cards
       </Button>
 
-      <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+      {/* <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
         {cards.map((card, index) => (
           <Card
             key={index}
@@ -104,7 +98,7 @@ export function Game({ goToPage }: GameProps) {
         ))}
       </div>
 
-      <h2 className="cardvalue">Valor total: {cardValue}</h2>
+      <h2 className="cardvalue">Valor total: {cardValue}</h2> */}
     </Container>
   );
 }
