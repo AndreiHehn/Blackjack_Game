@@ -7,7 +7,9 @@ export const Container = styled.div`
   background-color: var(--modal-background);
   border-radius: 9px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-  position: fixed;
+  position: absolute;
+  top: calc(50% - 175px / 2);
+  left: calc(50% - 300px / 2);
   display: flex;
   flex-direction: column;
   justify-content: end;

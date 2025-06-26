@@ -4,12 +4,11 @@ import ClubsIcon from "../assets/icons/ClubsIcon.svg?react";
 import SpadesIcon from "../assets/icons/SpadesIcon.svg?react";
 import HeartsIcon from "../assets/icons/HeartsIcon.svg?react";
 import DiamondsIcon from "../assets/icons/DiamondsIcon.svg?react";
+import { useContext } from "react";
+import { AppContext } from "../lib/context";
 
-interface GameProps {
-  leaveGame: () => void;
-}
-
-export function Header({ leaveGame }: GameProps) {
+export function Header() {
+  const { setBackToMenu } = useContext(AppContext);
   return (
     <Container>
       <div className="app-logo">
@@ -26,7 +25,7 @@ export function Header({ leaveGame }: GameProps) {
           <SpadesIcon className="suit-icon" />
         </div>
       </div>
-      <HomeIcon className="homeIcon" onClick={leaveGame} />
+      <HomeIcon className="homeIcon" onClick={() => setBackToMenu(true)} />
     </Container>
   );
 }

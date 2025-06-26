@@ -35,6 +35,8 @@ interface AppContextProps {
   setIsFadingIn: Dispatch<SetStateAction<boolean>>;
   isFadingOut: boolean;
   setIsFadingOut: Dispatch<SetStateAction<boolean>>;
+  backToMenu: boolean;
+  setBackToMenu: Dispatch<SetStateAction<boolean>>;
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
 }
@@ -62,6 +64,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [activePage, setActivePage] = useState<string>("Home");
   const [isFadingIn, setIsFadingIn] = useState<boolean>(false);
   const [isFadingOut, setIsFadingOut] = useState<boolean>(false);
+  const [backToMenu, setBackToMenu] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
@@ -90,6 +93,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setIsFadingIn,
         isFadingOut,
         setIsFadingOut,
+        backToMenu,
+        setBackToMenu,
       }}
     >
       {children}

@@ -1,9 +1,11 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useContext } from "react";
 import { Button } from "../generic/Button";
 import { Container } from "../styles/Game";
 import { Card } from "./Card";
 import { Header } from "./Header";
 import { t } from "i18next";
+import { AppContext } from "../lib/context";
+import { ModalMessage } from "../generic/ModalMessage";
 
 type Suit = "diamonds" | "clubs" | "hearts" | "spades";
 type Symbol =
@@ -60,6 +62,7 @@ const generateDeck = (): PlayingCard[] => {
 export function Game({ goToPage }: GameProps) {
   const [deck, setDeck] = useState<PlayingCard[]>(generateDeck());
   const [cards, setCards] = useState<PlayingCard[]>([]);
+  const { backToMenu, setBackToMenu } = useContext(AppContext);
 
   const getCardValue = (symbol: Symbol): number => {
     if (symbol === "A") return 11;
@@ -84,7 +87,7 @@ export function Game({ goToPage }: GameProps) {
 
   return (
     <Container>
-      <Header leaveGame={goToPage} />
+      <Header />
 
       <Button
         color="blue"
@@ -142,6 +145,16 @@ export function Game({ goToPage }: GameProps) {
           {t("Split")}
         </Button>
       </footer>
+
+      {backToMenu && (
+        <ModalMessage
+          textMessage={t("Do you want to leave the game?")}
+          textButton1={t("Cancel")}
+          onClick1={() => setBackToMenu(false)}
+          textButton2={t("Yes")}
+          onClick2={() => (setBackToMenu(false), goToPage())}
+        />
+      )}
     </Container>
   );
 }
