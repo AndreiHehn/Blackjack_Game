@@ -17,16 +17,11 @@ export const Container = styled.div<Props>`
   }
   .backgroundImage {
     display: ${(props) => (!props.$isFlipped ? "flex" : "none")};
-    border-left: 2px solid
+    border: 2px solid
       ${(props) =>
         props.$suit == "diamond" || props.$suit == "hearts"
           ? "#ff0000"
-          : "#000000"};
-    border-right: 2px solid
-      ${(props) =>
-        props.$suit == "diamond" || props.$suit == "hearts"
-          ? "#ff0000"
-          : "#000000"};
+          : "#FFFFFF"};
 
     background-image: url(${RedBackground});
     background-image: ${(props) =>

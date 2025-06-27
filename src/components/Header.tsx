@@ -40,7 +40,7 @@ export function Header({ startMatch }: Props) {
         functionButton={() => (startMatch(), setFirstStart(false))}
         disabled={!firstStart && !matchEnd}
       >
-        {t("Start Match")}
+        {t("New Match")}
       </Button>
       <HomeIcon className="homeIcon" onClick={() => setBackToMenu(true)} />
     </Container>
