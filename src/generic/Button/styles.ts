@@ -49,4 +49,19 @@ export const Container = styled.button<Props>`
         ? "#2f3640"
         : null};
   }
+
+  &:disabled {
+    background-color: ${({ color }) =>
+      color == "red"
+        ? "#fa8989"
+        : color == "blue"
+        ? "#a3a2fc"
+        : color == "green"
+        ? "#abffb6"
+        : color == "gray"
+        ? "#e8e8e8"
+        : null};
+
+    cursor: not-allowed;
+  }
 `;
