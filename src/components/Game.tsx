@@ -234,15 +234,15 @@ export function Game({ goToPage }: GameProps) {
   const getMatchResult = (): string => {
     if (!matchEnd) return "";
     if (playerPoints == 21 && playerCards.length == 2)
-      return `BLACKJACK! ${userName} ${t("Wins!")}`;
+      return `BLACKJACK! ${userName} ${t("Won!")}`;
 
     if (dealerVisiblePoints == 21 && dealerCards.length == 2)
-      return `BLACKJACK! ${t("Dealer Wins!")}`;
+      return `BLACKJACK! ${t("Dealer Won!")}`;
 
-    if (playerPoints > 21) return t("Dealer Wins!");
+    if (playerPoints > 21) return t("Dealer Won!");
     if (dealerVisiblePoints > 21 || playerPoints > dealerVisiblePoints)
-      return `${userName} ${t("Wins!")}`;
-    if (dealerVisiblePoints > playerPoints) return t("Dealer Wins!");
+      return `${userName} ${t("Won!")}`;
+    if (dealerVisiblePoints > playerPoints) return t("Dealer Won!");
     return t("It's a draw!");
   };
 
@@ -256,7 +256,7 @@ export function Game({ goToPage }: GameProps) {
           <div className="dealer">
             <h2 className="dealerText">{t("Dealer")}</h2>
             <h2 className="dealerPoints">
-              {t("Points in Hand")}: {dealerVisiblePoints}
+              {t("Points")}: {dealerVisiblePoints}
             </h2>
           </div>
         </div>
@@ -289,7 +289,7 @@ export function Game({ goToPage }: GameProps) {
           <div className="player">
             <h2 className="playerText">{userName}</h2>
             <h2 className="playerPoints">
-              {t("Points in Hand")}:{" "}
+              {t("Points")}:{" "}
               <span
                 style={{
                   color: playerPoints > 21 ? "red" : "var(--text-primary)",
