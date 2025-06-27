@@ -17,11 +17,7 @@ export const Container = styled.div<Props>`
   }
   .backgroundImage {
     display: ${(props) => (!props.$isFlipped ? "flex" : "none")};
-    border: 2px solid
-      ${(props) =>
-        props.$suit == "diamond" || props.$suit == "hearts"
-          ? "#ff0000"
-          : "#FFFFFF"};
+    border: 2px solid #ffffff;
 
     background-image: url(${RedBackground});
     background-image: ${(props) =>
