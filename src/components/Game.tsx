@@ -125,15 +125,15 @@ export function Game({ goToPage }: GameProps) {
 
     playerTemp.push(drawCard());
     setPlayerCards([...playerTemp]);
-    await sleep(1500);
+    await sleep(1000);
 
     dealerTemp.push(drawCard());
     setDealerCards([...dealerTemp]);
-    await sleep(1500);
+    await sleep(1000);
 
     playerTemp.push(drawCard());
     setPlayerCards([...playerTemp]);
-    await sleep(1500);
+    await sleep(1000);
 
     dealerTemp.push(drawCard());
     setDealerCards([...dealerTemp]);
@@ -152,7 +152,7 @@ export function Game({ goToPage }: GameProps) {
   }, [setMatchEnd]);
 
   const Hit = useCallback(async () => {
-    await sleep(1500);
+    await sleep(1000);
     const index = Math.floor(Math.random() * deck.length);
     const drawnCard = deck[index];
 
@@ -175,12 +175,14 @@ export function Game({ goToPage }: GameProps) {
     };
 
     while (calculatePoints(currentDealer) < 17 && currentDeck.length > 0) {
-      currentDealer.push(drawCard());
-      await sleep(1500);
+      await sleep(1000);
+
+      const card = drawCard();
+      currentDealer.push(card);
+      setDealerCards([...currentDealer]);
+      setDeck([...currentDeck]);
     }
 
-    setDealerCards(currentDealer);
-    setDeck(currentDeck);
     setMatchEnd(true);
   }, [deck, dealerCards]);
 
@@ -196,7 +198,7 @@ export function Game({ goToPage }: GameProps) {
 
     if (playerCards.length === 0 || matchEnd) return;
 
-    if (playerTotal > 21) {
+    if (playerTotal > 21 || (playerTotal == 21 && playerCards.length == 2)) {
       setMatchEnd(true);
       setPlayerTurn(false);
       setRevealDealerCards(true);
