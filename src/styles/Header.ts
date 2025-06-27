@@ -10,6 +10,10 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
 
+  @media (max-width: 720px) {
+    justify-content: center;
+  }
+
   .app-logo {
     display: flex;
     align-items: center;
@@ -55,10 +59,16 @@ export const Container = styled.header`
     }
   }
 
-  .homeIcon {
-    display: flex;
+  .buttons {
     position: absolute;
     right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .homeIcon,
+  .newMatchIcon {
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -71,6 +81,10 @@ export const Container = styled.header`
       path {
         fill: rgb(174, 174, 174);
       }
+    }
+
+    @media (max-width: 720px) {
+      display: none;
     }
   }
 `;

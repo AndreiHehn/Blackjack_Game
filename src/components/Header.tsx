@@ -6,17 +6,15 @@ import HeartsIcon from "../assets/icons/HeartsIcon.svg?react";
 import DiamondsIcon from "../assets/icons/DiamondsIcon.svg?react";
 import { useContext } from "react";
 import { AppContext } from "../lib/context";
-import { Button } from "../generic/Button";
-import { useTranslation } from "react-i18next";
+
+import NewMatchIcon from "../assets/icons/NewMatchIcon.svg?react";
 
 interface Props {
   startMatch: () => void;
 }
 
 export function Header({ startMatch }: Props) {
-  const { setBackToMenu, matchEnd, firstStart, setFirstStart } =
-    useContext(AppContext);
-  const { t } = useTranslation();
+  const { setBackToMenu, matchEnd, firstStart } = useContext(AppContext);
   return (
     <Container>
       <div className="app-logo">
@@ -33,16 +31,13 @@ export function Header({ startMatch }: Props) {
           <SpadesIcon className="suit-icon" />
         </div>
       </div>
-      <Button
-        color="green"
-        borderRadius="6px"
-        width="130px"
-        functionButton={() => (startMatch(), setFirstStart(false))}
-        disabled={!firstStart && !matchEnd}
-      >
-        {t("New Match")}
-      </Button>
-      <HomeIcon className="homeIcon" onClick={() => setBackToMenu(true)} />
+      <div className="buttons">
+        <NewMatchIcon
+          className="newMatchIcon"
+          onClick={!firstStart && !matchEnd ? undefined : startMatch}
+        />
+        <HomeIcon className="homeIcon" onClick={() => setBackToMenu(true)} />
+      </div>
     </Container>
   );
 }

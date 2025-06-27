@@ -6,6 +6,7 @@ interface Props {
   $margin: string;
   $width: string;
   $height: string;
+  $hideButton: boolean;
 }
 
 export const Container = styled.button<Props>`
@@ -23,7 +24,8 @@ export const Container = styled.button<Props>`
 
   border: none;
   border-radius: ${(props) => props.$borderRadius};
-
+  display: ${(props) => (props.$hideButton ? "none" : "flex")};
+  justify-content: center;
   width: ${(props) => props.$width};
   height: ${(props) => props.$height};
 

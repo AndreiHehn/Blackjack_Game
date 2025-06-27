@@ -10,6 +10,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   margin?: string;
   width?: string;
   height?: string;
+  hideButton?: boolean;
 }
 
 export function Button({
@@ -21,6 +22,7 @@ export function Button({
   margin,
   width,
   height,
+  hideButton,
 }: Props) {
   return (
     <Container
@@ -30,6 +32,7 @@ export function Button({
       $margin={margin ?? "0px"}
       $width={width ?? "auto"}
       $height={height ?? "auto"}
+      $hideButton={hideButton ?? false}
       onClick={functionButton}
     >
       {children}

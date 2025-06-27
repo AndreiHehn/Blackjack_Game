@@ -31,10 +31,12 @@ export const Container = styled.main`
 
     .dealerText {
       color: var(--app-color);
+      font-weight: 800;
     }
 
     .dealerPoints {
       color: var(--text-primary);
+      font-weight: 600;
     }
 
     .dealerCards {
@@ -64,16 +66,21 @@ export const Container = styled.main`
 
     .playerText {
       color: var(--app-color);
+      font-weight: 800;
     }
 
     .playerPoints {
       color: var(--text-primary);
+      font-weight: 600;
     }
 
     .playerCards {
       display: flex;
       gap: 10px;
-      height: 151.2px;
+
+      @media (max-width: 720px) {
+        height: 113.4px;
+      }
     }
   }
 
@@ -91,6 +98,27 @@ export const Container = styled.main`
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
+    display: flex;
+
+    .homeIcon,
+    .newMatchIcon {
+      cursor: pointer;
+
+      path {
+        fill: #f4f4f5;
+      }
+
+      &:hover {
+        path {
+          fill: rgb(174, 174, 174);
+        }
+      }
+
+      @media (min-width: 720px) {
+        display: none;
+      }
+    }
   }
 `;

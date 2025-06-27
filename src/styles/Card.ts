@@ -14,6 +14,11 @@ export const Container = styled.div<Props>`
     border-radius: 10px;
     position: relative;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 720px) {
+      width: 81px;
+      height: 113.4px;
+    }
   }
   .backgroundImage {
     display: ${(props) => (!props.$isFlipped ? "flex" : "none")};
@@ -43,6 +48,12 @@ export const Container = styled.div<Props>`
       height: 70px;
       position: absolute;
       bottom: 20px;
+
+      @media (max-width: 720px) {
+        width: 50px;
+        height: 50px;
+        bottom: 10px;
+      }
     }
 
     .specialCard {
@@ -50,6 +61,12 @@ export const Container = styled.div<Props>`
       height: 90px;
       position: absolute;
       bottom: 5px;
+
+      @media (max-width: 720px) {
+        width: 65px;
+        height: 65px;
+        bottom: 5px;
+      }
     }
     .red {
       path {
@@ -68,6 +85,10 @@ export const Container = styled.div<Props>`
         font-size: 28px;
         margin-left: 10px;
         margin-top: 5px;
+
+        @media (max-width: 720px) {
+          font-size: 22px;
+        }
       }
       .red {
         color: red;
@@ -78,6 +99,11 @@ export const Container = styled.div<Props>`
         margin-right: 10px;
         width: 28px;
         height: 28px;
+
+        @media (max-width: 720px) {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
