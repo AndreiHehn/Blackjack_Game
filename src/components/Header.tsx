@@ -14,7 +14,8 @@ interface Props {
 }
 
 export function Header({ startMatch }: Props) {
-  const { setBackToMenu, matchEnd } = useContext(AppContext);
+  const { setBackToMenu, matchEnd, firstStart, setFirstStart } =
+    useContext(AppContext);
   const { t } = useTranslation();
   return (
     <Container>
@@ -36,8 +37,8 @@ export function Header({ startMatch }: Props) {
         color="green"
         borderRadius="6px"
         width="130px"
-        functionButton={() => startMatch()}
-        disabled={!matchEnd}
+        functionButton={() => (startMatch(), setFirstStart(false))}
+        disabled={!firstStart && !matchEnd}
       >
         {t("Start Match")}
       </Button>
