@@ -6,9 +6,16 @@ import HeartsIcon from "../assets/icons/HeartsIcon.svg?react";
 import DiamondsIcon from "../assets/icons/DiamondsIcon.svg?react";
 import { useContext } from "react";
 import { AppContext } from "../lib/context";
+import { Button } from "../generic/Button";
+import { useTranslation } from "react-i18next";
 
-export function Header() {
-  const { setBackToMenu } = useContext(AppContext);
+interface Props {
+  startMatch: () => void;
+}
+
+export function Header({ startMatch }: Props) {
+  const { setBackToMenu, matchEnd } = useContext(AppContext);
+  const { t } = useTranslation();
   return (
     <Container>
       <div className="app-logo">
@@ -25,6 +32,15 @@ export function Header() {
           <SpadesIcon className="suit-icon" />
         </div>
       </div>
+      <Button
+        color="green"
+        borderRadius="6px"
+        width="130px"
+        functionButton={() => startMatch()}
+        disabled={!matchEnd}
+      >
+        {t("Start Match")}
+      </Button>
       <HomeIcon className="homeIcon" onClick={() => setBackToMenu(true)} />
     </Container>
   );

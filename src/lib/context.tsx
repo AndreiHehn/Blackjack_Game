@@ -37,6 +37,8 @@ interface AppContextProps {
   setIsFadingOut: Dispatch<SetStateAction<boolean>>;
   backToMenu: boolean;
   setBackToMenu: Dispatch<SetStateAction<boolean>>;
+  matchEnd: boolean;
+  setMatchEnd: Dispatch<SetStateAction<boolean>>;
   theme: string;
   setTheme: Dispatch<SetStateAction<string>>;
 }
@@ -65,6 +67,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   const [isFadingIn, setIsFadingIn] = useState<boolean>(false);
   const [isFadingOut, setIsFadingOut] = useState<boolean>(false);
   const [backToMenu, setBackToMenu] = useState<boolean>(false);
+  const [matchEnd, setMatchEnd] = useState<boolean>(true);
 
   return (
     <AppContext.Provider
@@ -95,6 +98,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setIsFadingOut,
         backToMenu,
         setBackToMenu,
+        matchEnd,
+        setMatchEnd,
       }}
     >
       {children}

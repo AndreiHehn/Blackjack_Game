@@ -15,6 +15,7 @@ export const Container = styled.header`
     align-items: center;
     margin-left: 20px;
     gap: 16px;
+    margin-right: 20px;
 
     .app-title {
       display: flex;
@@ -28,7 +29,7 @@ export const Container = styled.header`
         font-family: "Monoton", sans-serif;
         font-weight: 600;
         font-size: 20px;
-        color: var(--text-primary);
+        color: #f4f4f5;
 
         @media (max-width: 500px) {
           font-size: 16px;

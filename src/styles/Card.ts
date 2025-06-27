@@ -9,8 +9,8 @@ interface Props {
 export const Container = styled.div<Props>`
   .backgroundImage,
   .card {
-    width: 120px;
-    height: 168px;
+    width: 108px;
+    height: 151.2px;
     border-radius: 10px;
     position: relative;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
@@ -48,15 +48,15 @@ export const Container = styled.div<Props>`
     /* flex-direction: column; */
 
     .suitIcon {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       position: absolute;
       bottom: 20px;
     }
 
     .specialCard {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
       position: absolute;
       bottom: 5px;
     }
@@ -74,7 +74,7 @@ export const Container = styled.div<Props>`
       height: fit-content;
 
       .cardSymbol {
-        font-size: 36px;
+        font-size: 28px;
         margin-left: 10px;
         margin-top: 5px;
       }
@@ -85,8 +85,8 @@ export const Container = styled.div<Props>`
       .smallIcon {
         margin-top: 5px;
         margin-right: 10px;
-        width: 36px;
-        height: 36px;
+        width: 28px;
+        height: 28px;
       }
     }
   }

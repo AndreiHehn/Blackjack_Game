@@ -102,6 +102,7 @@ export function ModalSettings() {
             onChange={(e) => setInputValue(e.target.value)}
             defaultValue={inputValue}
             placeholder={t("Insert your username")}
+            maxLength={20}
           />
         </div>
       </section>
