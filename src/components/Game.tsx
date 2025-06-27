@@ -192,12 +192,57 @@ export function Game({ goToPage }: GameProps) {
     : calculatePoints(dealerCards);
 
   useEffect(() => {
-    if (playerCards.length > 0 && calculatePoints(playerCards) > 21) {
+    const playerTotal = calculatePoints(playerCards);
+
+    if (playerCards.length === 0 || matchEnd) return;
+
+    if (playerTotal > 21) {
       setMatchEnd(true);
-      setPlayerTurn(false); // impede Hit ou Stand após estouro
-      setRevealDealerCards(true); // revela o dealer para mostrar resultado
+      setPlayerTurn(false);
+      setRevealDealerCards(true);
+    } else if (playerTotal === 21) {
+      setPlayerTurn(false);
+      setRevealDealerCards(true);
+
+      const currentDeck = [...deck];
+      const currentDealer = [...dealerCards];
+
+      const drawCard = (): PlayingCard => {
+        const index = Math.floor(Math.random() * currentDeck.length);
+        const card = currentDeck[index];
+        currentDeck.splice(index, 1);
+        return card;
+      };
+
+      const dealerPlay = async () => {
+        while (calculatePoints(currentDealer) < 17 && currentDeck.length > 0) {
+          await sleep(1500);
+          currentDealer.push(drawCard());
+          setDealerCards([...currentDealer]);
+          setDeck([...currentDeck]);
+        }
+
+        setMatchEnd(true);
+      };
+
+      dealerPlay();
     }
-  }, [playerCards, setMatchEnd]);
+  }, [playerCards, matchEnd]);
+
+  const getMatchResult = (): string => {
+    if (!matchEnd) return "";
+    if (playerPoints == 21 && playerCards.length == 2)
+      return `BLACKJACK! ${userName} ${t("Wins!")}`;
+
+    if (dealerVisiblePoints == 21 && dealerCards.length == 2)
+      return `BLACKJACK! ${t("Dealer Wins!")}`;
+
+    if (playerPoints > 21) return t("Dealer Wins!");
+    if (dealerVisiblePoints > 21 || playerPoints > dealerVisiblePoints)
+      return `${userName} ${t("Wins!")}`;
+    if (dealerVisiblePoints > playerPoints) return t("Dealer Wins!");
+    return t("It's a draw!");
+  };
 
   return (
     <Container>
@@ -225,19 +270,7 @@ export function Game({ goToPage }: GameProps) {
         </div>
       </section>
       <section className="matchResult">
-        <h2 className="resultText">
-          {matchEnd
-            ? playerPoints > 21
-              ? t("Dealer Wins!")
-              : dealerVisiblePoints > 21
-              ? `${userName}` + " " + t("Wins!")
-              : playerPoints > dealerVisiblePoints
-              ? `${userName}` + " " + t("Wins!")
-              : dealerVisiblePoints > playerPoints
-              ? t("Dealer Wins!")
-              : t("It's a draw!")
-            : ""}
-        </h2>
+        <h2 className="resultText">{getMatchResult()}</h2>
       </section>
       <section className="playerContainer">
         <div className="playerCards">
