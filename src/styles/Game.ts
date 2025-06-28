@@ -38,16 +38,6 @@ export const Container = styled.main`
       color: var(--text-primary);
       font-weight: 600;
     }
-
-    .dealerCards {
-      display: flex;
-      gap: 10px;
-      height: 151.2px;
-
-      @media (max-width: 720px) {
-        height: 113.4px;
-      }
-    }
   }
 
   .playerContainer {
@@ -77,16 +67,35 @@ export const Container = styled.main`
       color: var(--text-primary);
       font-weight: 600;
     }
+  }
 
-    .playerCards {
-      display: flex;
-      gap: 10px;
-      height: 151.2px;
+  .dealerCards,
+  .playerCards {
+    display: flex;
+    flex-wrap: nowrap; /* Impede quebra de linha */
+    gap: 10px;
+    overflow-x: auto; /* Scroll horizontal */
+    overflow-y: hidden;
+    max-width: 100vw; /* Garante que não estoure a tela */
+    padding: 0 10px;
 
-      @media (max-width: 720px) {
-        height: 113.4px;
-      }
+    @media (max-width: 720px) {
+      height: 113.4px;
     }
+
+    /* Estiliza a scrollbar para ficar mais agradável (opcional) */
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-primary) transparent;
+  }
+
+  .dealerCards::-webkit-scrollbar,
+  .playerCards::-webkit-scrollbar {
+    height: 6px;
+  }
+  .dealerCards::-webkit-scrollbar-thumb,
+  .playerCards::-webkit-scrollbar-thumb {
+    background: var(--text-primary);
+    border-radius: 4px;
   }
 
   .matchResult {
