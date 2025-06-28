@@ -79,6 +79,7 @@ export function Game({ goToPage }: GameProps) {
     setMatchEnd,
     matchEnd,
     firstStart,
+    setFirstStart,
   } = useContext(AppContext);
 
   const getCardValue = (symbol: Symbol): number => {
@@ -112,6 +113,7 @@ export function Game({ goToPage }: GameProps) {
   };
 
   const startMatch = useCallback(async () => {
+    setFirstStart(false);
     setMatchEnd(false);
     setPlayerCards([]);
     setDealerCards([]);

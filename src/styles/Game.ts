@@ -43,6 +43,10 @@ export const Container = styled.main`
       display: flex;
       gap: 10px;
       height: 151.2px;
+
+      @media (max-width: 720px) {
+        height: 113.4px;
+      }
     }
   }
 
@@ -77,6 +81,7 @@ export const Container = styled.main`
     .playerCards {
       display: flex;
       gap: 10px;
+      height: 151.2px;
 
       @media (max-width: 720px) {
         height: 113.4px;
