@@ -8,6 +8,7 @@ export const Container = styled.main`
   justify-content: center;
   padding: 10px;
   background-color: var(--background-primary);
+  overflow: hidden;
 
   .app-header {
     display: flex;

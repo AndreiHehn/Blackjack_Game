@@ -127,6 +127,7 @@ export function Game({ goToPage }: GameProps) {
 
     const playerTemp: PlayingCard[] = [];
     const dealerTemp: PlayingCard[] = [];
+    await sleep(1000);
 
     playerTemp.push(drawCard());
     setPlayerCards([...playerTemp]);
@@ -265,7 +266,7 @@ export function Game({ goToPage }: GameProps) {
             </h2>
           </div>
         </div>
-        <div className="dealerCards">
+        <div className="containerCards">
           {dealerCards.map((card, index) => (
             <Card
               key={`dealer-${card.symbol}-${card.suit}-${index}`}
@@ -280,7 +281,7 @@ export function Game({ goToPage }: GameProps) {
         <h2 className="resultText">{getMatchResult()}</h2>
       </section>
       <section className="playerContainer">
-        <div className="playerCards">
+        <div className="containerCards">
           {playerCards.map((card, index) => (
             <Card
               key={`player-${card.symbol}-${card.suit}-${index}`}
@@ -344,7 +345,12 @@ export function Game({ goToPage }: GameProps) {
           textButton1={t("Cancel")}
           onClick1={() => setBackToMenu(false)}
           textButton2={t("Yes")}
-          onClick2={() => (setBackToMenu(false), goToPage())}
+          onClick2={() => (
+            setBackToMenu(false),
+            goToPage(),
+            setFirstStart(true),
+            setMatchEnd(false)
+          )}
         />
       )}
     </Container>
