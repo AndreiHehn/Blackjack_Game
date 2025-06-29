@@ -31,6 +31,7 @@ export function Home({ goToPage }: HomeProps) {
     setTheme,
     resetSettings,
     setResetSettings,
+    setShowModalHelp,
   } = useContext(AppContext);
 
   const { t } = useTranslation();
@@ -99,7 +100,7 @@ export function Home({ goToPage }: HomeProps) {
           borderRadius="6px"
           width="150px"
           height="40px"
-          functionButton={() => console.log("BOTÃO FUNCIONA")}
+          functionButton={() => setShowModalHelp(true)}
         >
           {t("How to Play")}
         </Button>

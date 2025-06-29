@@ -7,6 +7,7 @@ import { ModalGeneric } from "./generic/GenericModal";
 import { AppContext } from "./lib/context";
 import { useTranslation } from "react-i18next";
 import { TransitionPage } from "./components/Transition";
+import { ModalHelp } from "./components/ModalHelp";
 
 function App() {
   const {
@@ -17,6 +18,8 @@ function App() {
     theme,
     activePage,
     setActivePage,
+    showModalHelp,
+    setShowModalHelp,
   } = useContext(AppContext);
 
   const [targetPage, setTargetPage] = useState<"Home" | "Game" | null>(null);
@@ -161,6 +164,18 @@ function App() {
           width="400px"
         >
           <ModalSettings />
+        </ModalGeneric>
+      )}
+      {showModalHelp && (
+        <ModalGeneric
+          functionCloseModal={() => setShowModalHelp(false)}
+          mobileFullScreen
+          top="50%"
+          left="50%"
+          title={t("How to Play")}
+          width="400px"
+        >
+          <ModalHelp />
         </ModalGeneric>
       )}
     </>

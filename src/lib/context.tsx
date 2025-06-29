@@ -17,6 +17,8 @@ interface AppContextProps {
   setUserName: Dispatch<SetStateAction<string>>;
   showModalSettings: boolean;
   setShowModalSettings: Dispatch<SetStateAction<boolean>>;
+  showModalHelp: boolean;
+  setShowModalHelp: Dispatch<SetStateAction<boolean>>;
   quitSettings: boolean;
   setQuitSettings: Dispatch<SetStateAction<boolean>>;
   settingsChanged: boolean;
@@ -61,6 +63,7 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   );
 
   const [showModalSettings, setShowModalSettings] = useState<boolean>(false);
+  const [showModalHelp, setShowModalHelp] = useState<boolean>(false);
   const [quitSettings, setQuitSettings] = useState<boolean>(false);
   const [settingsChanged, setSettingsChanged] = useState<boolean>(false);
   const [emptyUserName, setEmptyUserName] = useState<boolean>(false);
@@ -79,6 +82,8 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
         setUserName,
         showModalSettings,
         setShowModalSettings,
+        showModalHelp,
+        setShowModalHelp,
         quitSettings,
         setQuitSettings,
         settingsChanged,
