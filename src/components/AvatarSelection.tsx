@@ -57,6 +57,7 @@ export function AvatarSelection({ selectedAvatar, onSelectAvatar }: Props) {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
+    draggable: false,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
