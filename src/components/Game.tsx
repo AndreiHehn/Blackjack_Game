@@ -272,7 +272,15 @@ export function Game({ goToPage }: GameProps) {
           <div className="dealer">
             <h2 className="dealerText">{t("Dealer")}</h2>
             <h2 className="dealerPoints">
-              {t("Points")}: {dealerVisiblePoints}
+              {t("Points")}:{" "}
+              <span
+                style={{
+                  color:
+                    dealerVisiblePoints > 21 ? "red" : "var(--text-primary)",
+                }}
+              >
+                {dealerVisiblePoints}
+              </span>
             </h2>
           </div>
         </div>
