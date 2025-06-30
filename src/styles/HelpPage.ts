@@ -36,6 +36,7 @@ export const Container = styled.section<Props>`
       color: var(--text-primary);
       font-weight: 400;
       text-align: justify;
+      margin-right: 10px;
 
       @media (max-width: 720px) {
         width: 70%;

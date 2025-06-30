@@ -30,6 +30,10 @@ export const Container = styled.div<Props>`
   bottom: ${(props) => props.$bottom};
   left: ${(props) => props.$left};
 
+  @media (max-width: 720px) {
+    overflow-y: scroll;
+  }
+
   /* Fullscreen no mobile */
   @media (max-width: 768px) {
     ${(props) =>

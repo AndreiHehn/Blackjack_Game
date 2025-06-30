@@ -12,6 +12,7 @@ import ArrowPrevIcon from "../../src/assets/icons/ArrowPrevIcon.svg?react";
 
 export function ModalHelp() {
   const { t } = useTranslation();
+  const screenSize = window.innerWidth;
 
   function NextArrow(props: any) {
     const { onClick } = props;
@@ -37,64 +38,125 @@ export function ModalHelp() {
 
   return (
     <Container>
-      <Slider {...carouselSettings}>
-        <Page
-          pageTitle={t("Welcome to Blackjack!")}
-          pageText={t(
-            "Blackjack is a card game where the objective is to sum 21 points to your hand, or closer than that, without busting. It's you against the dealer!"
-          )}
-          pageIcon={<HeartsIcon />}
-          iconPosition="left"
-        />
-        <Page
-          pageTitle={t("Starting the Game")}
-          pageText={t(
-            "Each player receives two cards, while the Dealer's second card is always flipped. If one of the players has a Blackjack, it's endgame!"
-          )}
-          pageIcon={<ClubsIcon />}
-          iconPosition="right"
-        />
-        <Page
-          pageTitle={t("Your Turn") + " (1 / 2)"}
-          pageText={t(
-            "The button HIT allows to add one card to your hand, since you have 21 or less points in your hand."
-          )}
-          pageIcon={<DiamondsIcon />}
-          iconPosition="left"
-        />
-        <Page
-          pageTitle={t("Your Turn") + " (2 / 2)"}
-          pageText={t(
-            "The button STAND ends your turn, and starts Dealer's turn."
-          )}
-          pageIcon={<SpadesIcon />}
-          iconPosition="right"
-        />
-        <Page
-          pageTitle={t("Dealer's Turn") + " (1 / 3)"}
-          pageText={t(
-            "When your turn is finished, Dealer's second card will be displayed to you."
-          )}
-          pageIcon={<HeartsIcon />}
-          iconPosition="left"
-        />
-        <Page
-          pageTitle={t("Dealer's Turn") + " (2 / 3)"}
-          pageText={t(
-            "If Dealer's two cards sum is greater than 17, it's endgame, and the winner is the one with more points in hand!"
-          )}
-          pageIcon={<ClubsIcon />}
-          iconPosition="right"
-        />
-        <Page
-          pageTitle={t("Dealer's Turn") + " (3 / 3)"}
-          pageText={t(
-            "If Dealer's two cards sum is lower than 17, the Dealer will hit cards until having 17 points in hand."
-          )}
-          pageIcon={<DiamondsIcon />}
-          iconPosition="left"
-        />
-      </Slider>
+      {screenSize > 720 ? (
+        <Slider {...carouselSettings}>
+          <Page
+            pageTitle={t("Welcome to Blackjack!")}
+            pageText={t(
+              "Blackjack is a card game where the objective is to sum 21 points to your hand, or closer than that, without busting. It's you against the dealer!"
+            )}
+            pageIcon={<HeartsIcon />}
+            iconPosition="left"
+          />
+          <Page
+            pageTitle={t("Starting the Game")}
+            pageText={t(
+              "Each player receives two cards, while the Dealer's second card is always flipped. If one of the players has a Blackjack, it's endgame!"
+            )}
+            pageIcon={<ClubsIcon />}
+            iconPosition="right"
+          />
+          <Page
+            pageTitle={t("Your Turn") + " (1 / 2)"}
+            pageText={t(
+              "The button HIT allows to add one card to your hand, since you have 21 or less points in your hand."
+            )}
+            pageIcon={<DiamondsIcon />}
+            iconPosition="left"
+          />
+          <Page
+            pageTitle={t("Your Turn") + " (2 / 2)"}
+            pageText={t(
+              "The button STAND ends your turn, and starts Dealer's turn."
+            )}
+            pageIcon={<SpadesIcon />}
+            iconPosition="right"
+          />
+          <Page
+            pageTitle={t("Dealer's Turn") + " (1 / 3)"}
+            pageText={t(
+              "When your turn is finished, Dealer's second card will be displayed to you."
+            )}
+            pageIcon={<HeartsIcon />}
+            iconPosition="left"
+          />
+          <Page
+            pageTitle={t("Dealer's Turn") + " (2 / 3)"}
+            pageText={t(
+              "If Dealer's two cards sum is greater than 17, it's endgame, and the winner is the one with more points in hand!"
+            )}
+            pageIcon={<ClubsIcon />}
+            iconPosition="right"
+          />
+          <Page
+            pageTitle={t("Dealer's Turn") + " (3 / 3)"}
+            pageText={t(
+              "If Dealer's two cards sum is lower than 17, the Dealer will hit cards until having 17 points in hand."
+            )}
+            pageIcon={<DiamondsIcon />}
+            iconPosition="left"
+          />
+        </Slider>
+      ) : (
+        <div className="mobilePages">
+          <Page
+            pageTitle={t("Welcome to Blackjack!")}
+            pageText={t(
+              "Blackjack is a card game where the objective is to sum 21 points to your hand, or closer than that, without busting. It's you against the dealer!"
+            )}
+            pageIcon={<HeartsIcon />}
+            iconPosition="left"
+          />
+          <Page
+            pageTitle={t("Starting the Game")}
+            pageText={t(
+              "Each player receives two cards, while the Dealer's second card is always flipped. If one of the players has a Blackjack, it's endgame!"
+            )}
+            pageIcon={<ClubsIcon />}
+            iconPosition="right"
+          />
+          <Page
+            pageTitle={t("Your Turn") + " (1 / 2)"}
+            pageText={t(
+              "The button HIT allows to add one card to your hand, since you have 21 or less points in your hand."
+            )}
+            pageIcon={<DiamondsIcon />}
+            iconPosition="left"
+          />
+          <Page
+            pageTitle={t("Your Turn") + " (2 / 2)"}
+            pageText={t(
+              "The button STAND ends your turn, and starts Dealer's turn."
+            )}
+            pageIcon={<SpadesIcon />}
+            iconPosition="right"
+          />
+          <Page
+            pageTitle={t("Dealer's Turn") + " (1 / 3)"}
+            pageText={t(
+              "When your turn is finished, Dealer's second card will be displayed to you."
+            )}
+            pageIcon={<HeartsIcon />}
+            iconPosition="left"
+          />
+          <Page
+            pageTitle={t("Dealer's Turn") + " (2 / 3)"}
+            pageText={t(
+              "If Dealer's two cards sum is greater than 17, it's endgame, and the winner is the one with more points in hand!"
+            )}
+            pageIcon={<ClubsIcon />}
+            iconPosition="right"
+          />
+          <Page
+            pageTitle={t("Dealer's Turn") + " (3 / 3)"}
+            pageText={t(
+              "If Dealer's two cards sum is lower than 17, the Dealer will hit cards until having 17 points in hand."
+            )}
+            pageIcon={<DiamondsIcon />}
+            iconPosition="left"
+          />
+        </div>
+      )}
     </Container>
   );
 }

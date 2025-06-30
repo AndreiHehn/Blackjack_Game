@@ -4,6 +4,7 @@ export const Container = styled.div`
   height: auto;
   width: auto;
   overflow: hidden;
+
   .slick-slider {
     position: relative;
     width: 100%;
@@ -74,5 +75,9 @@ export const Container = styled.div`
 
   .carouselArrow:last-of-type {
     right: 0px;
+  }
+
+  .mobilePages {
+    overflow-y: scroll;
   }
 `;
