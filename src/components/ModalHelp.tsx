@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { Container } from "../styles/ModalHelp";
@@ -24,7 +25,7 @@ export function ModalHelp() {
 
   const carouselSettings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -40,30 +41,58 @@ export function ModalHelp() {
         <Page
           pageTitle={t("Welcome to Blackjack!")}
           pageText={t(
-            "Blackjack é um jogo de cartas onde o objetivo é somar 21 pontos ou o mais próximo disso, sem ultrapassar. Você joga contra o dealer. Simples e rápido!"
+            "Blackjack is a card game where the objective is to sum 21 points to your hand, or closer than that, without busting. It's you against the dealer!"
           )}
           pageIcon={<HeartsIcon />}
           iconPosition="left"
         />
         <Page
-          pageTitle={t("Como Jogar")}
+          pageTitle={t("Starting the Game")}
           pageText={t(
-            "Escolha 'Hit' para pedir uma carta, ou 'Stand' para parar."
+            "Each player receives two cards, while the Dealer's second card is always flipped. If one of the players has a Blackjack, it's endgame!"
           )}
           pageIcon={<ClubsIcon />}
           iconPosition="right"
         />
         <Page
-          pageTitle={t("Objetivo")}
-          pageText={t("Fique mais próximo de 21 que o dealer sem ultrapassar!")}
+          pageTitle={t("Your Turn") + " (1 / 2)"}
+          pageText={t(
+            "The button HIT allows to add one card to your hand, since you have 21 or less points in your hand."
+          )}
           pageIcon={<DiamondsIcon />}
           iconPosition="left"
         />
         <Page
-          pageTitle={t("Boa sorte!")}
-          pageText={t("Divirta-se e jogue com responsabilidade.")}
+          pageTitle={t("Your Turn") + " (2 / 2)"}
+          pageText={t(
+            "The button STAND ends your turn, and starts Dealer's turn."
+          )}
           pageIcon={<SpadesIcon />}
           iconPosition="right"
+        />
+        <Page
+          pageTitle={t("Dealer's Turn") + " (1 / 3)"}
+          pageText={t(
+            "When your turn is finished, Dealer's second card will be displayed to you."
+          )}
+          pageIcon={<HeartsIcon />}
+          iconPosition="left"
+        />
+        <Page
+          pageTitle={t("Dealer's Turn") + " (2 / 3)"}
+          pageText={t(
+            "If Dealer's two cards sum is greater than 17, it's endgame, and the winner is the one with more points in hand!"
+          )}
+          pageIcon={<ClubsIcon />}
+          iconPosition="right"
+        />
+        <Page
+          pageTitle={t("Dealer's Turn") + " (3 / 3)"}
+          pageText={t(
+            "If Dealer's two cards sum is lower than 17, the Dealer will hit cards until having 17 points in hand."
+          )}
+          pageIcon={<DiamondsIcon />}
+          iconPosition="left"
         />
       </Slider>
     </Container>

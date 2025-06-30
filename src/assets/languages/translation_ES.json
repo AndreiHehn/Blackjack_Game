@@ -1,6 +1,7 @@
 {
   "Cancel": "Cancelar",
   "Dark Theme": "Tema Oscuro",
+  "Dealer's Turn": "Turno del Dealer",
   "Dealer Won!": "¡Dealer Venció!",
   "Do you want to leave the game?": "¿Quieres salir del juego?",
   "Do you want to quit without saving?": "¿Quieres salir sin guardar?",
@@ -21,12 +22,23 @@
   "Settings": "Configuraciónes",
   "Stand": "Parar",
   "Start Game": "Empezar Juego",
+  "Starting the Game": "Início del Juego",
   "System Theme": "Tema del Sistema",
   "Theme": "Tema",
   "User Settings": "Configuraciónes de Usuário",
   "User Name": "Nombre del Usuário",
   "Welcome": "Bienvenido",
+  "Welcome to Blackjack!": "¡Bienvenido al Blackjack!",
   "Won!": "¡Venció!",
   "Yes": "Si",
-  "Your username cannot be empty!": "¡Tu nombre de usuário no puede ser vazío!"
+  "Your Turn": "Su Turno",
+  "Your username cannot be empty!": "¡Tu nombre de usuário no puede ser vazío!",
+
+  "Blackjack is a card game where the objective is to sum 21 points to your hand, or closer than that, without busting. It's you against the dealer!": "Blackjack es un juego de cartas donde el objetivo es sumar 21 puntos en tu mano, o acercarte lo máximo posible, sin pasarte. ¡Es tú contra el Dealer!",
+  "Each player receives two cards, while the Dealer's second card is always flipped. If one of the players has a Blackjack, it's endgame!": "Cada jugador recibe dos cartas, y la segunda carta del Dealer siempre está boca abajo. ¡Si algún jugador tiene un Blackjack, se acaba el juego!",
+  "The button HIT allows to add one card to your hand, since you have 21 or less points in your hand.": "El botón COMPRAR te permite añadir una carta a tu mano, siempre que tengas 21 puntos o menos.",
+  "The button STAND ends your turn, and starts Dealer's turn.": "El botón PARAR termina tu turno y comienza el turno del Dealer.",
+  "When your turn is finished, Dealer's second card will be displayed to you.": "Cuando termine tu turno, se mostrará la segunda carta del Dealer.",
+  "If Dealer's two cards sum is greater than 17, it's endgame, and the winner is the one with more points in hand!": "Si la suma de las dos cartas del Dealer es mayor que 17, el juego termina y gana quien tenga más puntos en la mano.",
+  "If Dealer's two cards sum is lower than 17, the Dealer will hit cards until having 17 points in hand.": "Si la suma de las dos cartas del Dealer es menor que 17, el Dealer pedirá cartas hasta alcanzar los 17 puntos."
 }

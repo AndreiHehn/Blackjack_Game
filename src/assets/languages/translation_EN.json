@@ -1,6 +1,7 @@
 {
   "Cancel": "Cancel",
   "Dark Theme": "Dark Theme",
+  "Dealer's Turn": "Dealer's Turn",
   "Dealer Won!": "Dealer Won",
   "Do you want to leave the game?": "Do you want to leave the game?",
   "Do you want to quit without saving?": "Do you want to quit without saving?",
@@ -21,12 +22,23 @@
   "Settings": "Settings",
   "Stand": "Stand",
   "Start Game": "Start Game",
+  "Starting the Game": "Starting the Game",
   "System Theme": "System Theme",
   "Theme": "Theme",
   "User Name": "User Name",
   "User Settings": "User Settings",
   "Welcome": "Welcome",
+  "Welcome to Blackjack!": "Welcome to Blackjack!",
   "Won!": "Won!",
   "Yes": "Yes",
-  "Your username cannot be empty!": "Your username cannot be empty!"
+  "Your Turn": "Your Turn",
+  "Your username cannot be empty!": "Your username cannot be empty!",
+
+  "Blackjack is a card game where the objective is to sum 21 points to your hand, or closer than that, without busting. It's you against the dealer!": "Blackjack is a card game where the objective is to sum 21 points to your hand, or closer than that, without busting. It's you against the dealer!",
+  "Each player receives two cards, while the Dealer's second card is always flipped. If one of the players has a Blackjack, it's endgame!": "Each player receives two cards, while the Dealer's second card is always flipped. If one of the players has a Blackjack, it's endgame!",
+  "The button HIT allows to add one card to your hand, since you have 21 or less points in your hand.": "The button HIT allows to add one card to your hand, since you have 21 or less points in your hand.",
+  "The button STAND ends your turn, and starts Dealer's turn.": "The button STAND ends your turn, and starts Dealer's turn.",
+  "When your turn is finished, Dealer's second card will be displayed to you.": "When your turn is finished, Dealer's second card will be displayed to you.",
+  "If Dealer's two cards sum is greater than 17, it's endgame, and the winner is the one with more points in hand!": "If Dealer's two cards sum is greater than 17, it's endgame, and the winner is the one with more points in hand!",
+  "If Dealer's two cards sum is lower than 17, the Dealer will hit cards until having 17 points in hand.": "If Dealer's two cards sum is lower than 17, the Dealer will hit cards until having 17 points in hand."
 }
