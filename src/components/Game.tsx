@@ -9,6 +9,7 @@ import { ModalMessage } from "../generic/ModalMessage";
 import DealerAvatar from "../assets/icons/avatar_dealer.png";
 import HomeIcon from "../assets/icons/HomeIcon.svg?react";
 import NewMatchIcon from "../assets/icons/NewMatchIcon.svg?react";
+import HelpIcon from "../assets/icons/HelpIcon.svg?react";
 
 type Suit = "diamonds" | "clubs" | "hearts" | "spades";
 type Symbol =
@@ -80,6 +81,7 @@ export function Game({ goToPage }: GameProps) {
     matchEnd,
     firstStart,
     setFirstStart,
+    setShowModalHelp,
   } = useContext(AppContext);
 
   const getCardValue = (symbol: Symbol): number => {
@@ -255,6 +257,14 @@ export function Game({ goToPage }: GameProps) {
   return (
     <Container>
       <Header startMatch={startMatch} />
+      <nav className="subheader">
+        <NewMatchIcon
+          className="newMatchIcon"
+          onClick={!firstStart && !matchEnd ? undefined : startMatch}
+        />
+        <HelpIcon className="helpIcon" onClick={() => setShowModalHelp(true)} />
+        <HomeIcon className="homeIcon" onClick={() => setBackToMenu(true)} />
+      </nav>
 
       <section className="dealerContainer">
         <div className="dealerInfo">
@@ -310,10 +320,6 @@ export function Game({ goToPage }: GameProps) {
       </section>
 
       <footer className="actionButtons">
-        <NewMatchIcon
-          className="newMatchIcon"
-          onClick={!firstStart && !matchEnd ? undefined : startMatch}
-        />
         <Button
           color="red"
           borderRadius="6px"
@@ -336,7 +342,6 @@ export function Game({ goToPage }: GameProps) {
         >
           {t("Stand")}
         </Button>
-        <HomeIcon className="homeIcon" onClick={() => setBackToMenu(true)} />
       </footer>
 
       {backToMenu && (

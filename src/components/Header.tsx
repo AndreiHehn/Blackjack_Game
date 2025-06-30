@@ -1,5 +1,6 @@
 import { Container } from "../styles/Header";
 import HomeIcon from "../assets/icons/HomeIcon.svg?react";
+import HelpIcon from "../assets/icons/HelpIcon.svg?react";
 import ClubsIcon from "../assets/icons/ClubsIcon.svg?react";
 import SpadesIcon from "../assets/icons/SpadesIcon.svg?react";
 import HeartsIcon from "../assets/icons/HeartsIcon.svg?react";
@@ -14,7 +15,8 @@ interface Props {
 }
 
 export function Header({ startMatch }: Props) {
-  const { setBackToMenu, matchEnd, firstStart } = useContext(AppContext);
+  const { setBackToMenu, matchEnd, firstStart, setShowModalHelp } =
+    useContext(AppContext);
   return (
     <Container>
       <div className="app-logo">
@@ -36,6 +38,7 @@ export function Header({ startMatch }: Props) {
           className="newMatchIcon"
           onClick={!firstStart && !matchEnd ? undefined : startMatch}
         />
+        <HelpIcon className="helpIcon" onClick={() => setShowModalHelp(true)} />
         <HomeIcon className="homeIcon" onClick={() => setBackToMenu(true)} />
       </div>
     </Container>

@@ -67,10 +67,30 @@ export const Container = styled.header`
     align-items: center;
     gap: 20px;
   }
-  .homeIcon,
-  .newMatchIcon {
+  .homeIcon {
     width: 40px;
     height: 40px;
+    cursor: pointer;
+
+    path {
+      fill: #f4f4f5;
+    }
+
+    &:hover {
+      path {
+        fill: rgb(174, 174, 174);
+      }
+    }
+
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
+
+  .newMatchIcon,
+  .helpIcon {
+    width: 35px;
+    height: 35px;
     cursor: pointer;
 
     path {

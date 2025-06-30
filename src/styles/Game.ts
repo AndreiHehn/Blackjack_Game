@@ -118,9 +118,24 @@ export const Container = styled.main`
     align-items: center;
     gap: 10px;
     display: flex;
+  }
+
+  .subheader {
+    @media (min-width: 720px) {
+      display: none;
+    }
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--header-color);
+    border-top: 2px solid var(--background-primary);
+    padding: 5px 0;
 
     .homeIcon,
-    .newMatchIcon {
+    .newMatchIcon,
+    .helpIcon {
+      height: 30px;
+      width: 30px;
       cursor: pointer;
 
       path {
