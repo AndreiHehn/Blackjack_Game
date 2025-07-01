@@ -139,7 +139,7 @@ export const Container = styled.main`
       cursor: pointer;
 
       path {
-        fill: var(--text-primary);
+        fill: #f4f4f5;
       }
 
       &:hover {
