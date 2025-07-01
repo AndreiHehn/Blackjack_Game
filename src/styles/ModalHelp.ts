@@ -76,8 +76,4 @@ export const Container = styled.div`
   .carouselArrow:last-of-type {
     right: 0px;
   }
-
-  .mobilePages {
-    overflow-y: scroll;
-  }
 `;

@@ -31,7 +31,19 @@ export const Container = styled.div<Props>`
   left: ${(props) => props.$left};
 
   @media (max-width: 720px) {
-    overflow-y: scroll;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--app-color);
+    }
   }
 
   /* Fullscreen no mobile */
